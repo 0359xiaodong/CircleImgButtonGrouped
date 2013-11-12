@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="CircleImgBtn">
+        <attr name="height" format="integer"></attr>
+        <attr name="width" format="integer"></attr>
+        <attr name="border" format="boolean"></attr>
+        <attr name="border_width" format="integer"></attr>
+        <attr name="border_color" format="color"></attr>
+        <attr name="shadow" format="boolean"></attr>
+    </declare-styleable>
+    
+    <declare-styleable name="CircleImgBtnGroup">
+        <attr name="ibHeight" format="integer"></attr>
+        <attr name="ibWidth" format="integer"></attr>
+        <attr name="ibCount" format="integer"></attr>
+        <attr name="collapseAtClick" format="boolean"></attr>
+        <attr name="imgSrcCIB1" format="integer"></attr>
+        <attr name="imgSrcCIB2" format="integer"></attr>
+        <attr name="imgSrcCIB3" format="integer"></attr>
+        <attr name="imgSrcCIB4" format="integer"></attr>
+        <attr name="imgSrcCIB5" format="integer"></attr>
+    </declare-styleable>
+            
+    <declare-styleable name="Theme">
+        <attr name="circularImageViewStyle" format="reference"></attr>
+    </declare-styleable>
+
+</resources>
