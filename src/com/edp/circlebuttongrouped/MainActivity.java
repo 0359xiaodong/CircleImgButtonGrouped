@@ -26,9 +26,14 @@ public class MainActivity extends Activity {
 		((CircleImgBtnGroup) findViewById(R.id.cibBottom4)).configGroup(rlLeft);
 		((CircleImgBtnGroup) findViewById(R.id.cibBottom5)).configGroup(rlLeft);
 		((CircleImgBtnGroup) findViewById(R.id.cibBottom6)).configGroup(rlLeft);
-		((CircleImgBtnGroup) findViewById(R.id.CibGroup01)).configGroup(rlLeft);
-		((CircleImgBtnGroup) findViewById(R.id.CibGroup02)).configGroup(rlLeft);
-		((CircleImgBtnGroup) findViewById(R.id.CibGroup03)).configGroup(rlLeft);
+		((CircleImgBtnGroup) findViewById(R.id.cib3)).configGroup(rlLeft);
+		((CircleImgBtnGroup) findViewById(R.id.cib4)).configGroup(rlLeft);
+		((CircleImgBtnGroup) findViewById(R.id.cib5_1)).configGroup(rlLeft);
+		((CircleImgBtnGroup) findViewById(R.id.cib5_2)).configGroup(rlLeft);
+		((CircleImgBtnGroup) findViewById(R.id.cib5_3)).configGroup(rlLeft);
+		((CircleImgBtnGroup) findViewById(R.id.cib6_1)).configGroup(rlLeft);
+		((CircleImgBtnGroup) findViewById(R.id.cib6_2)).configGroup(rlLeft);
+		((CircleImgBtnGroup) findViewById(R.id.cib6_3)).configGroup(rlLeft);
 	}
 
 	@Override

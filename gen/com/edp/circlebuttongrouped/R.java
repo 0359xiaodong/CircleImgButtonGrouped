@@ -155,20 +155,24 @@ containing a value of this type.
         public static final int morning=0x7f020006;
     }
     public static final class id {
-        public static final int CibGroup01=0x7f080003;
-        public static final int CibGroup02=0x7f080004;
-        public static final int CibGroup03=0x7f080005;
-        public static final int action_settings=0x7f08000e;
-        public static final int cibBottom3=0x7f080006;
-        public static final int cibBottom4=0x7f08000b;
-        public static final int cibBottom5=0x7f08000a;
-        public static final int cibBottom6=0x7f08000c;
+        public static final int action_settings=0x7f080012;
+        public static final int cib3=0x7f080010;
+        public static final int cib4=0x7f080011;
+        public static final int cib5_1=0x7f08000b;
+        public static final int cib5_2=0x7f08000f;
+        public static final int cib5_3=0x7f08000e;
+        public static final int cib6_1=0x7f08000a;
+        public static final int cib6_2=0x7f08000d;
+        public static final int cib6_3=0x7f08000c;
+        public static final int cibBottom3=0x7f080008;
+        public static final int cibBottom4=0x7f080007;
+        public static final int cibBottom5=0x7f080006;
+        public static final int cibBottom6=0x7f080009;
         public static final int cibTop3=0x7f080002;
-        public static final int cibTop4=0x7f080007;
-        public static final int cibTop5=0x7f080008;
-        public static final int cibTop6=0x7f080009;
+        public static final int cibTop4=0x7f080004;
+        public static final int cibTop5=0x7f080003;
+        public static final int cibTop6=0x7f080005;
         public static final int rlLeft=0x7f080001;
-        public static final int rlRight=0x7f08000d;
         public static final int rlRoot=0x7f080000;
     }
     public static final class layout {
