@@ -4,7 +4,6 @@
     android:id="@+id/rlRoot"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="10dp"
     android:clipChildren="false"
     android:padding="10dp"
     tools:context=".MainActivity" >
@@ -16,13 +15,12 @@
         android:layout_weight="1" >
 
         <com.edp.circlebuttongrouped.CircleImgBtnGroup
-            android:id="@+id/cibGroup1"
+            android:id="@+id/cibTop3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginLeft="5dp"
-            app:collapseAtClick="true"
+            app:collapseAtClick="false"
             app:ibCount="3"
             app:ibHeight="80"
             app:ibWidth="80"
@@ -34,11 +32,11 @@
             android:id="@+id/CibGroup01"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/cibGroup1"
-            android:layout_below="@+id/cibGroup1"
+            android:layout_alignLeft="@+id/cibTop3"
+            android:layout_below="@+id/cibTop3"
             android:layout_marginTop="10dp"
-            app:collapseAtClick="true"
-            app:ibCount="4"
+            app:collapseAtClick="false"
+            app:ibCount="3"
             app:ibHeight="80"
             app:ibWidth="80"
             app:imgSrcCIB1="@drawable/afternoon"
@@ -53,7 +51,7 @@
             android:layout_alignLeft="@+id/CibGroup01"
             android:layout_below="@+id/CibGroup01"
             android:layout_marginTop="10dp"
-            app:collapseAtClick="true"
+            app:collapseAtClick="false"
             app:ibCount="5"
             app:ibHeight="80"
             app:ibWidth="80"
@@ -62,24 +60,127 @@
             app:imgSrcCIB3="@drawable/close_book"
             app:imgSrcCIB4="@drawable/cry" />
 
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/rlMain"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="3" >
-
-        <TextView
-            android:id="@+id/textView1"
+        <com.edp.circlebuttongrouped.CircleImgBtnGroup
+            android:id="@+id/CibGroup03"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="222dp"
-            android:layout_marginTop="26dp"
-            android:text="TextView" />
+            android:layout_alignLeft="@+id/CibGroup01"
+            android:layout_below="@+id/CibGroup02"
+            android:layout_marginTop="10dp"
+            app:collapseAtClick="false"
+            app:ibCount="4"
+            app:ibHeight="80"
+            app:ibWidth="80"
+            app:imgSrcCIB1="@drawable/afternoon"
+            app:imgSrcCIB2="@drawable/close_activity"
+            app:imgSrcCIB3="@drawable/close_book"
+            app:imgSrcCIB4="@drawable/cry"
+            app:imgSrcCIB5="@drawable/morning" />
+        
+        <com.edp.circlebuttongrouped.CircleImgBtnGroup
+            android:id="@+id/cibBottom3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/CibGroup01"
+            android:layout_below="@+id/CibGroup03"
+            android:layout_marginTop="10dp"
+            app:collapseAtClick="false"
+            app:ibCount="3"
+            app:ibHeight="80"
+            app:ibWidth="80"
+            app:imgSrcCIB1="@drawable/afternoon"
+            app:imgSrcCIB2="@drawable/close_activity"
+            app:imgSrcCIB3="@drawable/close_book"
+            app:imgSrcCIB4="@drawable/cry"
+            app:imgSrcCIB5="@drawable/morning" />
 
+        <com.edp.circlebuttongrouped.CircleImgBtnGroup
+            android:id="@+id/cibTop4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/CibGroup01"
+            android:layout_marginLeft="40dp"
+            android:layout_toRightOf="@+id/cibTop3"
+            app:collapseAtClick="false"
+            app:ibCount="4"
+            app:ibHeight="80"
+            app:ibWidth="80"
+            app:imgSrcCIB1="@drawable/afternoon"
+            app:imgSrcCIB2="@drawable/close_activity"
+            app:imgSrcCIB3="@drawable/close_book" />
+
+        <com.edp.circlebuttongrouped.CircleImgBtnGroup
+            android:id="@+id/cibTop5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="40dp"
+            android:layout_toRightOf="@+id/cibTop4"
+            app:collapseAtClick="false"
+            app:ibCount="5"
+            app:ibHeight="80"
+            app:ibWidth="80"
+            app:imgSrcCIB1="@drawable/afternoon"
+            app:imgSrcCIB2="@drawable/close_activity"
+            app:imgSrcCIB3="@drawable/close_book" />
+
+        <com.edp.circlebuttongrouped.CircleImgBtnGroup
+            android:id="@+id/cibTop6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="40dp"
+            android:layout_toRightOf="@+id/cibTop5"
+            app:collapseAtClick="false"
+            app:ibCount="6"
+            app:ibHeight="80"
+            app:ibWidth="80"
+            app:imgSrcCIB1="@drawable/afternoon"
+            app:imgSrcCIB2="@drawable/close_activity"
+            app:imgSrcCIB3="@drawable/close_book" />
+
+        <com.edp.circlebuttongrouped.CircleImgBtnGroup
+            android:id="@+id/cibBottom5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/cibTop5"
+            android:layout_alignTop="@+id/cibBottom4"
+            app:collapseAtClick="false"
+            app:ibCount="5"
+            app:ibHeight="80"
+            app:ibWidth="80"
+            app:imgSrcCIB1="@drawable/afternoon"
+            app:imgSrcCIB2="@drawable/close_activity"
+            app:imgSrcCIB3="@drawable/close_book" />
+
+        <com.edp.circlebuttongrouped.CircleImgBtnGroup
+            android:id="@+id/cibBottom4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/cibTop4"
+            android:layout_alignTop="@+id/cibBottom3"
+            app:collapseAtClick="false"
+            app:ibCount="4"
+            app:ibHeight="80"
+            app:ibWidth="80"
+            app:imgSrcCIB1="@drawable/afternoon"
+            app:imgSrcCIB2="@drawable/close_activity"
+            app:imgSrcCIB3="@drawable/close_book" />
+
+        <com.edp.circlebuttongrouped.CircleImgBtnGroup
+            android:id="@+id/cibBottom6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/cibTop6"
+            android:layout_alignTop="@+id/cibBottom5"
+            app:collapseAtClick="false"
+            app:ibCount="6"
+            app:ibHeight="80"
+            app:ibWidth="80"
+            app:imgSrcCIB1="@drawable/afternoon"
+            app:imgSrcCIB2="@drawable/close_activity"
+            app:imgSrcCIB3="@drawable/close_book" />
+        
     </RelativeLayout>
 
     <RelativeLayout
