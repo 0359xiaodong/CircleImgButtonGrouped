@@ -26,6 +26,10 @@ public class CircleImgBtnUtils {
 		return expanded;
 	}
 
+	/**
+	 * @param cib
+	 * @return true se o botão informado esta fora da tela saindo por cima
+	 */
 	public boolean isCIBOutsideTop(CircleImgBtn cib) {
 		final float yPos = cib.getTop() + cib.getTranslationY();
 		if(yPos < 0)
@@ -33,6 +37,10 @@ public class CircleImgBtnUtils {
 		return false;
 	}
 
+	/**
+	 * @param cib
+	 * @return true se o botão informado esta fora da tela saindo por baixo
+	 */
 	public boolean isCIBOutsideBottom(CircleImgBtn cib) {
 		final RelativeLayout parent = (RelativeLayout) cibg.getParent();
 		final float yPos = cib.getTop() + cib.getTranslationY();
@@ -41,21 +49,36 @@ public class CircleImgBtnUtils {
 		return false;
 	}
 
-	public boolean willBeCIBOutsideTop(CircleImgBtn cib, float yPos) {
-		yPos += cib.getTop() + cib.getTranslationY();
-		if(yPos < 0)
+	/**
+	 * @param cib
+	 * @param futureYPos
+	 * @return true se o botão informado estará fora da tela por cima
+	 */
+	public boolean willBeCIBOutsideTop(CircleImgBtn cib, float futureYPos) {
+		futureYPos += cib.getTop() + cib.getTranslationY();
+		if(futureYPos < 0)
 			return true;
 		return false;
 	}
 
-	public boolean willBeCIBOutsideBottom(CircleImgBtn cib, float yPos) {
+	/**
+	 * @param cib
+	 * @param futureYPos
+	 * @return true se o botão informado estará fora da tela por baixo
+	 */
+	public boolean willBeCIBOutsideBottom(CircleImgBtn cib, float futureYPos) {
 		final RelativeLayout parent = (RelativeLayout) cibg.getParent();
-		yPos += cib.getTop() + cib.getTranslationY();
-		if(yPos + cibg.getViewHeight() > parent.getHeight())
+		futureYPos += cib.getTop() + cib.getTranslationY();
+		if(futureYPos + cibg.getViewHeight() > parent.getHeight())
 			return true;
 		return false;
 	}
 
+	/**
+	 * Cria uma copia do Relative.LayoutParams
+	 * @param lp
+	 * @return Copy do LayoutParams
+	 */
 	public RelativeLayout.LayoutParams getRelativeLayoutParamsCopy(RelativeLayout.LayoutParams lp) {
 		RelativeLayout.LayoutParams thisParams = lp;
 		RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(

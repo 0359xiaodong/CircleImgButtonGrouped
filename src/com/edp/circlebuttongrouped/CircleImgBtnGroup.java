@@ -34,6 +34,9 @@ public class CircleImgBtnGroup extends CircleImgBtn implements OnClickListener, 
 		setButtomsCount(attribs.getInt(R.styleable.CircleImgBtnGroup_ibCount, 3));
 	}
 
+	/**
+	 * Configura o botão da frente que é este componente
+	 */
 	private void configMainImgBtn() {
 		setImageResource(getImgCIVs(0));
 		addShadow();
@@ -79,6 +82,10 @@ public class CircleImgBtnGroup extends CircleImgBtn implements OnClickListener, 
 		return count;
 	}
 
+	/**
+	 * configura a qtd de botões e os instancia
+	 * @param count
+	 */
 	public void setButtomsCount(int count) {
 		this.count = count;
 		if(count > 5)
@@ -97,6 +104,10 @@ public class CircleImgBtnGroup extends CircleImgBtn implements OnClickListener, 
 		}
 	}
 
+	/**
+	 * Posiciona os botões no relativelayout informado 
+	 * @param rl - RelativeLayout o qual será pai dos botões agrupados
+	 */
 	public void configGroup(RelativeLayout rl){
 		this.rl = rl;
 		//coloca iniciando do ultimo para q o primeiro fique no topo e no canto esquerdo
