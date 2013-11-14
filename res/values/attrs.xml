@@ -20,6 +20,7 @@
         <attr name="imgSrcCIB3" format="integer"></attr>
         <attr name="imgSrcCIB4" format="integer"></attr>
         <attr name="imgSrcCIB5" format="integer"></attr>
+        <attr name="imgSrcCIB6" format="integer"></attr>
     </declare-styleable>
             
     <declare-styleable name="Theme">

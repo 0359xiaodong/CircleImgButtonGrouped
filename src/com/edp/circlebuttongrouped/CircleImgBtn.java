@@ -13,15 +13,18 @@ import android.graphics.drawable.BitmapDrawable;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 
-import com.edp.circlebuttongrouped.R;
-
-public class CircleImgBtn extends ImageView {
+/**
+ * @author ESS
+ * Extensão de ImageView que desenha imagem redonda
+ */
+public class CircleImgBtn extends ImageView{
 	
 	private int width;
 	private int height;
 	private int borderWidth;
 	private Paint paint;
 	private Paint paintBorder;
+	private int defaultColor;
 
 	public CircleImgBtn(Context context) {
 		this(context, null);
@@ -43,7 +46,8 @@ public class CircleImgBtn extends ImageView {
 		
 		if(attributes.getBoolean(R.styleable.CircleImgBtn_border, true)) {
 			setBorderWidth(attributes.getColor(R.styleable.CircleImgBtn_border_width, 4));
-			setBorderColor(attributes.getInt(R.styleable.CircleImgBtn_border_color, Color.WHITE));
+			defaultColor = attributes.getInt(R.styleable.CircleImgBtn_border_color, Color.WHITE);
+			setBorderColor(defaultColor);
 		}
 		
 		if(attributes.getBoolean(R.styleable.CircleImgBtn_shadow, false))
@@ -79,9 +83,20 @@ public class CircleImgBtn extends ImageView {
 		this.invalidate();
 	}
 
+	public void resetBorderColor(){
+		setBorderColor(defaultColor);
+	}
+	
 	public void addShadow() {
 		setLayerType(LAYER_TYPE_SOFTWARE, paintBorder);
 		paintBorder.setShadowLayer(4.0f, 0.0f, 2.0f, Color.BLACK);
+		invalidate();
+	}
+
+	public void remShadow() {
+		setLayerType(LAYER_TYPE_SOFTWARE, paintBorder);
+		paintBorder.clearShadowLayer();
+		invalidate();
 	}
 
 	@SuppressLint("DrawAllocation")

@@ -2,6 +2,7 @@ package com.edp.circlebuttongrouped;
 
 import java.util.ArrayList;
 
+import android.graphics.Color;
 import android.widget.RelativeLayout;
 
 public class CircleImgBtnUtils {
@@ -9,6 +10,7 @@ public class CircleImgBtnUtils {
 	public static final int EXPAND_DISTANCE = 25;
 	public static final int VERTICAL_BTN_DISTANCE = 5;
 	public static final int HORIZONTAL_BTN_DISTANCE = 5;
+	private static final int EXPANDED_COLOR = Color.BLUE;
 	
 	private boolean expanded;
 	private CircleImgBtnGroup cibg;
@@ -99,6 +101,7 @@ public class CircleImgBtnUtils {
 	 */
 	void expand() {
 		expanded = true;
+		cibg.setBorderColor(EXPANDED_COLOR);
 		TopOutAdjust = BottomOutAdjust = 0;
 		//instancias de botões
 		final CircleImgBtn cib1 = CIBs.get(1);
@@ -120,7 +123,6 @@ public class CircleImgBtnUtils {
 			cib5_x = cib5.getTranslationX() - 4*HORIZONTAL_BTN_DISTANCE;
 		//posição final dos botões e ajustes se algum saiu da tela
 		float cib1_y_End = 0, cib2_y_End = 0, cib3_y_End = 0, cib4_y_End = 0, cib5_y_End = 0;
-//		float TopOutAdjust = 0, BottomOutAdjust = 0;
 		switch (cibg.getButtomsCount()) {
 			case 2:
 				cib1.animate().translationX(cib1_x + cibWidth + EXPAND_DISTANCE).withLayer();
@@ -197,6 +199,7 @@ public class CircleImgBtnUtils {
 	 */
 	void collapse() {
 		expanded = false;
+		cibg.resetBorderColor();
 		//instancias de botões
 		final CircleImgBtn cib1 = CIBs.get(1);
 		final CircleImgBtn cib2 = (cibg.getButtomsCount() > 2) ? CIBs.get(2) : null;

@@ -53,6 +53,7 @@ public class CircleImgBtnGroup extends CircleImgBtn implements OnClickListener, 
 			case 2: return attribs.getResourceId(R.styleable.CircleImgBtnGroup_imgSrcCIB3, def);
 			case 3: return attribs.getResourceId(R.styleable.CircleImgBtnGroup_imgSrcCIB4, def);
 			case 4: return attribs.getResourceId(R.styleable.CircleImgBtnGroup_imgSrcCIB5, def);
+			case 5: return attribs.getResourceId(R.styleable.CircleImgBtnGroup_imgSrcCIB6, def);
 		}
 		return def;
 	}
@@ -125,12 +126,6 @@ public class CircleImgBtnGroup extends CircleImgBtn implements OnClickListener, 
 
 	@Override
 	public boolean onLongClick(View v) {
-		if(v != this){
-			RelativeLayout.LayoutParams params = (LayoutParams) CIBs.get(1).getLayoutParams();
-			params.topMargin -= 5;
-			CIBs.get(1).setLayoutParams(params);
-			return true;
-		}
 		if(!cibUtils.isExpanded()){
 			collapseAllOthers();
 			cibUtils.expand();

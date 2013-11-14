@@ -26,7 +26,9 @@
             app:ibWidth="80"
             app:imgSrcCIB1="@drawable/afternoon"
             app:imgSrcCIB2="@drawable/close_activity"
-            app:imgSrcCIB3="@drawable/close_book" />
+            app:imgSrcCIB3="@drawable/close_book"
+            app:imgSrcCIB4="@drawable/cry"
+            app:imgSrcCIB6="@drawable/morning" />
 
         <com.edp.circlebuttongrouped.CircleImgBtnGroup
             android:id="@+id/cibTop5"
@@ -41,7 +43,9 @@
             app:ibWidth="80"
             app:imgSrcCIB1="@drawable/afternoon"
             app:imgSrcCIB2="@drawable/close_activity"
-            app:imgSrcCIB3="@drawable/close_book" />
+            app:imgSrcCIB3="@drawable/close_book"
+            app:imgSrcCIB4="@drawable/cry"
+            app:imgSrcCIB6="@drawable/morning" />
 
         <com.edp.circlebuttongrouped.CircleImgBtnGroup
             android:id="@+id/cibTop6"
@@ -56,7 +60,9 @@
             app:ibWidth="80"
             app:imgSrcCIB1="@drawable/afternoon"
             app:imgSrcCIB2="@drawable/close_activity"
-            app:imgSrcCIB3="@drawable/close_book" />
+            app:imgSrcCIB3="@drawable/close_book"
+            app:imgSrcCIB4="@drawable/cry"
+            app:imgSrcCIB6="@drawable/morning" />
 
         <com.edp.circlebuttongrouped.CircleImgBtnGroup
             android:id="@+id/cibBottom5"
@@ -70,7 +76,9 @@
             app:ibWidth="80"
             app:imgSrcCIB1="@drawable/afternoon"
             app:imgSrcCIB2="@drawable/close_activity"
-            app:imgSrcCIB3="@drawable/close_book" />
+            app:imgSrcCIB3="@drawable/close_book"
+            app:imgSrcCIB4="@drawable/cry"
+            app:imgSrcCIB6="@drawable/morning"/>
 
         <com.edp.circlebuttongrouped.CircleImgBtnGroup
             android:id="@+id/cibBottom4"
@@ -84,7 +92,9 @@
             app:ibWidth="80"
             app:imgSrcCIB1="@drawable/afternoon"
             app:imgSrcCIB2="@drawable/close_activity"
-            app:imgSrcCIB3="@drawable/close_book" />
+            app:imgSrcCIB3="@drawable/close_book"
+            app:imgSrcCIB4="@drawable/cry"
+            app:imgSrcCIB6="@drawable/morning" />
 
         <com.edp.circlebuttongrouped.CircleImgBtnGroup
             android:id="@+id/cibBottom6"
@@ -98,7 +108,9 @@
             app:ibWidth="80"
             app:imgSrcCIB1="@drawable/afternoon"
             app:imgSrcCIB2="@drawable/close_activity"
-            app:imgSrcCIB3="@drawable/close_book" />
+            app:imgSrcCIB3="@drawable/close_book"
+            app:imgSrcCIB4="@drawable/cry"
+            app:imgSrcCIB6="@drawable/morning" />
 
         <com.edp.circlebuttongrouped.CircleImgBtnGroup
             android:id="@+id/cibBottom3"
@@ -114,7 +126,7 @@
             app:imgSrcCIB2="@drawable/close_activity"
             app:imgSrcCIB3="@drawable/close_book"
             app:imgSrcCIB4="@drawable/cry"
-            app:imgSrcCIB5="@drawable/morning" />
+            app:imgSrcCIB6="@drawable/morning" />
 
         <com.edp.circlebuttongrouped.CircleImgBtnGroup
             android:id="@+id/cib6_1"
@@ -129,7 +141,8 @@
             app:imgSrcCIB1="@drawable/afternoon"
             app:imgSrcCIB2="@drawable/close_activity"
             app:imgSrcCIB3="@drawable/close_book"
-            app:imgSrcCIB4="@drawable/cry" />
+            app:imgSrcCIB4="@drawable/cry"
+            app:imgSrcCIB6="@drawable/morning"/>
 
         <com.edp.circlebuttongrouped.CircleImgBtnGroup
             android:id="@+id/cib6_3"
@@ -144,7 +157,8 @@
             app:imgSrcCIB1="@drawable/afternoon"
             app:imgSrcCIB2="@drawable/close_activity"
             app:imgSrcCIB3="@drawable/close_book"
-            app:imgSrcCIB4="@drawable/cry" />
+            app:imgSrcCIB4="@drawable/cry"
+            app:imgSrcCIB6="@drawable/morning" />
 
         <com.edp.circlebuttongrouped.CircleImgBtnGroup
             android:id="@+id/cib6_2"
@@ -159,7 +173,8 @@
             app:imgSrcCIB1="@drawable/afternoon"
             app:imgSrcCIB2="@drawable/close_activity"
             app:imgSrcCIB3="@drawable/close_book"
-            app:imgSrcCIB4="@drawable/cry" />
+            app:imgSrcCIB4="@drawable/cry"
+            app:imgSrcCIB6="@drawable/morning" />
 
         <com.edp.circlebuttongrouped.CircleImgBtnGroup
             android:id="@+id/cib3"
@@ -174,7 +189,8 @@
             app:imgSrcCIB1="@drawable/afternoon"
             app:imgSrcCIB2="@drawable/close_activity"
             app:imgSrcCIB3="@drawable/close_book"
-            app:imgSrcCIB4="@drawable/cry" />
+            app:imgSrcCIB4="@drawable/cry"
+            app:imgSrcCIB6="@drawable/morning" />
 
         <com.edp.circlebuttongrouped.CircleImgBtnGroup
             android:id="@+id/cibTop4"
@@ -189,7 +205,9 @@
             app:ibWidth="80"
             app:imgSrcCIB1="@drawable/afternoon"
             app:imgSrcCIB2="@drawable/close_activity"
-            app:imgSrcCIB3="@drawable/close_book" />
+            app:imgSrcCIB3="@drawable/close_book"
+            app:imgSrcCIB4="@drawable/cry"
+            app:imgSrcCIB6="@drawable/morning" />
 
         <com.edp.circlebuttongrouped.CircleImgBtnGroup
             android:id="@+id/cib4"
@@ -205,7 +223,7 @@
             app:imgSrcCIB2="@drawable/close_activity"
             app:imgSrcCIB3="@drawable/close_book"
             app:imgSrcCIB4="@drawable/cry"
-            app:imgSrcCIB5="@drawable/morning" />
+            app:imgSrcCIB6="@drawable/morning" />
 
         <com.edp.circlebuttongrouped.CircleImgBtnGroup
             android:id="@+id/cib5_2"
@@ -220,7 +238,8 @@
             app:imgSrcCIB1="@drawable/afternoon"
             app:imgSrcCIB2="@drawable/close_activity"
             app:imgSrcCIB3="@drawable/close_book"
-            app:imgSrcCIB4="@drawable/cry" />
+            app:imgSrcCIB4="@drawable/cry"
+            app:imgSrcCIB6="@drawable/morning"/>
 
         <com.edp.circlebuttongrouped.CircleImgBtnGroup
             android:id="@+id/cib5_3"
@@ -237,7 +256,7 @@
             app:imgSrcCIB2="@drawable/close_activity"
             app:imgSrcCIB3="@drawable/close_book"
             app:imgSrcCIB4="@drawable/cry"
-            app:imgSrcCIB5="@drawable/morning" />
+            app:imgSrcCIB6="@drawable/morning" />
 
         <com.edp.circlebuttongrouped.CircleImgBtnGroup
             android:id="@+id/cib5_1"
@@ -253,7 +272,8 @@
             app:imgSrcCIB1="@drawable/afternoon"
             app:imgSrcCIB2="@drawable/close_activity"
             app:imgSrcCIB3="@drawable/close_book"
-            app:imgSrcCIB4="@drawable/cry" />
+            app:imgSrcCIB4="@drawable/cry"
+            app:imgSrcCIB6="@drawable/morning" />
         
     </RelativeLayout>
 
