@@ -155,12 +155,10 @@ public class CircleImgBtnUtils {
 				cib2_y_End = -cibHeight/2 - VERTICAL_BTN_DISTANCE;
 				cib3_y_End = +cibHeight/2 + VERTICAL_BTN_DISTANCE;
 				cib4_y_End = +cibHeight + cibHeight/2 + 3*VERTICAL_BTN_DISTANCE;
-				TopOutAdjust = willBeCIBOutsideTop(cib1, cib1_y_End) ? -cib1_y_End : 0;
-				TopOutAdjust = willBeCIBOutsideTop(cib1, cib1_y_End) 
-							&& !willBeCIBOutsideTop(cib2, cib2_y_End) ? -cib2_y_End : 0;
-				BottomOutAdjust = willBeCIBOutsideBottom(cib3, cib3_y_End) 
-							&& !willBeCIBOutsideBottom(cib4, cib4_y_End) ? -cib3_y_End : 0;
-				BottomOutAdjust = willBeCIBOutsideBottom(cib4, cib4_y_End) ? -cib4_y_End : 0;
+				TopOutAdjust = willBeCIBOutsideTop(cib1, cib1_y_End) ? 
+						willBeCIBOutsideTop(cib2, cib2_y_End) ? -cib1_y_End : -cib2_y_End : 0;
+				BottomOutAdjust = willBeCIBOutsideBottom(cib4, cib4_y_End) ? 
+						willBeCIBOutsideBottom(cib3, cib3_y_End) ? -cib4_y_End : -cib3_y_End : 0;
 				cib1.animate().translationX(cib1_x + cibWidth + EXPAND_DISTANCE).
 					translationY(cib1_y_End + TopOutAdjust + BottomOutAdjust).withLayer();
 				cib2.animate().translationX(cib2_x + cibWidth + EXPAND_DISTANCE).
@@ -176,8 +174,10 @@ public class CircleImgBtnUtils {
 				cib3_y_End = 0;
 				cib4_y_End = +cibHeight + VERTICAL_BTN_DISTANCE + VERTICAL_BTN_DISTANCE/2;
 				cib5_y_End = 2*(+cibHeight + VERTICAL_BTN_DISTANCE + VERTICAL_BTN_DISTANCE/2);
-				TopOutAdjust = willBeCIBOutsideTop(cib1, cib1_y_End) ? -cib1_y_End : 0;
-				BottomOutAdjust = willBeCIBOutsideBottom(cib3, cib3_y_End) ? -cib3_y_End : 0;
+				TopOutAdjust = willBeCIBOutsideTop(cib1, cib1_y_End) ? 
+						willBeCIBOutsideTop(cib2, cib2_y_End) ? -cib1_y_End : -cib2_y_End : 0;
+				BottomOutAdjust = willBeCIBOutsideBottom(cib5, cib5_y_End) ? 
+						willBeCIBOutsideBottom(cib4, cib4_y_End) ? -cib5_y_End : -cib4_y_End : 0;
 				cib1.animate().translationX(cib1_x + cibWidth + EXPAND_DISTANCE).
 					translationY(cib1_y_End + TopOutAdjust + BottomOutAdjust).withLayer();
 				cib2.animate().translationX(cib2_x + cibWidth + EXPAND_DISTANCE).
