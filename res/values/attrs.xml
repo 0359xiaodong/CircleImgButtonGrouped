@@ -14,13 +14,15 @@
         <attr name="ibHeight" format="integer"></attr>
         <attr name="ibWidth" format="integer"></attr>
         <attr name="ibCount" format="integer"></attr>
+        <attr name="label" format="string"></attr>
+        <attr name="inverted" format="boolean"></attr>
         <attr name="collapseAtClick" format="boolean"></attr>
-        <attr name="imgSrcCIB1" format="integer"></attr>
-        <attr name="imgSrcCIB2" format="integer"></attr>
-        <attr name="imgSrcCIB3" format="integer"></attr>
-        <attr name="imgSrcCIB4" format="integer"></attr>
-        <attr name="imgSrcCIB5" format="integer"></attr>
-        <attr name="imgSrcCIB6" format="integer"></attr>
+        <attr name="imgSrcCIB1" format="reference"></attr>
+        <attr name="imgSrcCIB2" format="reference"></attr>
+        <attr name="imgSrcCIB3" format="reference"></attr>
+        <attr name="imgSrcCIB4" format="reference"></attr>
+        <attr name="imgSrcCIB5" format="reference"></attr>
+        <attr name="imgSrcCIB6" format="reference"></attr>
     </declare-styleable>
             
     <declare-styleable name="Theme">

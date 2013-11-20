@@ -11,6 +11,7 @@ import android.view.View.OnClickListener;
 import android.view.View.OnLongClickListener;
 import android.widget.RelativeLayout;
 import android.widget.RelativeLayout.LayoutParams;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class CircleImgBtnGroup extends CircleImgBtn implements OnClickListener, OnLongClickListener{
@@ -18,8 +19,9 @@ public class CircleImgBtnGroup extends CircleImgBtn implements OnClickListener, 
 	private RelativeLayout rl;
 	private int height, width, count;
 	private TypedArray attribs;
-	private boolean collapseAtClick;
+	private boolean collapseAtClick, inverted;
 	private CircleImgBtnUtils cibUtils;
+	private TextView lbGroupLabel;
 	ArrayList<CircleImgBtn> CIBs = new ArrayList<CircleImgBtn>();
 
 	@SuppressLint("Recycle")
@@ -32,6 +34,8 @@ public class CircleImgBtnGroup extends CircleImgBtn implements OnClickListener, 
 		setHeight(attribs.getInt(R.styleable.CircleImgBtnGroup_ibHeight, 100));
 		setWidth(attribs.getInt(R.styleable.CircleImgBtnGroup_ibWidth, 100));
 		setButtomsCount(attribs.getInt(R.styleable.CircleImgBtnGroup_ibCount, 3));
+		setGroupLabel(attribs.getString(R.styleable.CircleImgBtnGroup_label));
+		inverted = attribs.getBoolean(R.styleable.CircleImgBtnGroup_inverted, false);
 	}
 
 	/**
@@ -40,6 +44,8 @@ public class CircleImgBtnGroup extends CircleImgBtn implements OnClickListener, 
 	private void configMainImgBtn() {
 		setImageResource(getImgCIVs(0));
 		addShadow();
+		lbGroupLabel = new TextView(getContext());
+		lbGroupLabel.setText("");
 		setOnClickListener(this);
 		setOnLongClickListener(this);
 	}
@@ -82,6 +88,9 @@ public class CircleImgBtnGroup extends CircleImgBtn implements OnClickListener, 
 		return count;
 	}
 
+	public void setGroupLabel(String label){
+		lbGroupLabel.setText(label);
+	}
 	/**
 	 * configura a qtd de botões e os instancia
 	 * @param count
@@ -109,13 +118,27 @@ public class CircleImgBtnGroup extends CircleImgBtn implements OnClickListener, 
 	 * @param rl - RelativeLayout o qual será pai dos botões agrupados
 	 */
 	public void configGroup(RelativeLayout rl){
+		if(this.rl != null)
+			return;
 		this.rl = rl;
+		RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(
+				LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+		params.addRule(RelativeLayout.ALIGN_LEFT, this.getId());
+		params.addRule(RelativeLayout.ALIGN_BOTTOM, this.getId());
+		final float lbGroupWidth = lbGroupLabel.getPaint().measureText(lbGroupLabel.getText().toString());
+		int leftMargin = getViewWidth()/2 - (int)lbGroupWidth/3;
+		params.setMargins(leftMargin, 0, 0, -15);
+		lbGroupLabel.setLayoutParams(params);
+		rl.addView(lbGroupLabel);
 		//coloca iniciando do ultimo para q o primeiro fique no topo e no canto esquerdo
 		for (int i=CIBs.size()-1; i>0; i--) {
 			CircleImgBtn cib = CIBs.get(i);
-			RelativeLayout.LayoutParams params = cibUtils.
-					getRelativeLayoutParamsCopy((LayoutParams) getLayoutParams());
-			params.leftMargin += i*CircleImgBtnUtils.HORIZONTAL_BTN_DISTANCE;
+			params = cibUtils.getRelativeLayoutParamsCopy(
+					(RelativeLayout.LayoutParams) getLayoutParams());
+			if(inverted)
+				params.leftMargin -= i*CircleImgBtnUtils.HORIZONTAL_BTN_DISTANCE;
+			else
+				params.leftMargin += i*CircleImgBtnUtils.HORIZONTAL_BTN_DISTANCE;
 			cib.setLayoutParams(params);
 			rl.addView(cib);
 		}
