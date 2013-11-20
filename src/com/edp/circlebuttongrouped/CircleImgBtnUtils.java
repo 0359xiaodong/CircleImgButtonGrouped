@@ -123,6 +123,8 @@ public class CircleImgBtnUtils {
 	 * desagrupa os botões mostrando os que estão por trás
 	 */
 	void expand(boolean inverted) {
+		if(cibg.getButtomsCount() < 2)
+			return;
 		expanded = true;
 		cibg.setBorderColor(EXPANDED_COLOR);
 		TopOutAdjust = BottomOutAdjust = 0;
@@ -223,6 +225,8 @@ public class CircleImgBtnUtils {
 	 * Agrupa os botões mostrando apenas o que esta na frente
 	 */
 	void collapse(boolean inverted) {
+		if(cibg.getButtomsCount() < 2)
+			return;
 		expanded = false;
 		cibg.resetBorderColor();
 		//instancias de botões
