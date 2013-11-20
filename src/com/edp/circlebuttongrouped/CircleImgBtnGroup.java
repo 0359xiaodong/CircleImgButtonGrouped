@@ -135,10 +135,13 @@ public class CircleImgBtnGroup extends CircleImgBtn implements OnClickListener, 
 			CircleImgBtn cib = CIBs.get(i);
 			params = cibUtils.getRelativeLayoutParamsCopy(
 					(RelativeLayout.LayoutParams) getLayoutParams());
-			if(inverted)
+			if(inverted){
 				params.leftMargin -= i*CircleImgBtnUtils.HORIZONTAL_BTN_DISTANCE;
-			else
+				params.rightMargin += i*CircleImgBtnUtils.HORIZONTAL_BTN_DISTANCE;
+			}else{
 				params.leftMargin += i*CircleImgBtnUtils.HORIZONTAL_BTN_DISTANCE;
+				params.rightMargin -= i*CircleImgBtnUtils.HORIZONTAL_BTN_DISTANCE;
+			}
 			cib.setLayoutParams(params);
 			rl.addView(cib);
 		}
@@ -148,8 +151,12 @@ public class CircleImgBtnGroup extends CircleImgBtn implements OnClickListener, 
 	@Override
 	public void onClick(View v) {
 		if(cibUtils.isExpanded() && collapseAtClick & v.equals(this)){
-			cibUtils.collapse();
+			cibUtils.collapse(inverted);
 		}
+//		showInfo(v);
+	}
+
+	void showInfo(View v) {
 		int num = CIBs.indexOf(v);
 		float top = CIBs.get(num).getTop() + CIBs.get(num).getTranslationY();
 		float left = CIBs.get(num).getLeft() + CIBs.get(num).getTranslationX();
@@ -162,20 +169,20 @@ public class CircleImgBtnGroup extends CircleImgBtn implements OnClickListener, 
 	public boolean onLongClick(View v) {
 		if(!cibUtils.isExpanded()){
 			collapseAllOthers();
-			cibUtils.expand();
+			cibUtils.expand(inverted);
 		}else
-			cibUtils.collapse();
+			cibUtils.collapse(inverted);
 		return true;
 	}
 
 	public void expand(){
 		if(!cibUtils.isExpanded())
-			cibUtils.expand();
+			cibUtils.expand(inverted);
 	}
 	
 	public void collapse(){
 		if(cibUtils.isExpanded())
-			cibUtils.collapse();
+			cibUtils.collapse(inverted);
 	}
 	
 	private void collapseAllOthers() {

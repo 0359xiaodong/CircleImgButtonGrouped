@@ -122,7 +122,7 @@ public class CircleImgBtnUtils {
 	/**
 	 * desagrupa os botões mostrando os que estão por trás
 	 */
-	void expand() {
+	void expand(boolean inverted) {
 		expanded = true;
 		cibg.setBorderColor(EXPANDED_COLOR);
 		TopOutAdjust = BottomOutAdjust = 0;
@@ -135,6 +135,7 @@ public class CircleImgBtnUtils {
 		final int cibWidth = cibg.getViewWidth();
 		final int cibHeight = cibg.getViewHeight();
 		//posicao inicial dos botões
+		int inv = (inverted)?-1:1;
 		float cib1_x = cib1.getTranslationX(), cib2_x = 0, cib3_x = 0, cib4_x = 0, cib5_x = 0;
 		if (cibg.getButtomsCount() > 2)
 			cib2_x = cib2.getTranslationX() - 1*HORIZONTAL_BTN_DISTANCE;
@@ -148,16 +149,17 @@ public class CircleImgBtnUtils {
 		float cib1_y_End = 0, cib2_y_End = 0, cib3_y_End = 0, cib4_y_End = 0, cib5_y_End = 0;
 		switch (cibg.getButtomsCount()) {
 			case 2:
-				cib1.animate().translationX(cib1_x + cibWidth + EXPAND_DISTANCE).withLayer();
+				cib1.animate().translationX(inv*(cib1_x + cibWidth + EXPAND_DISTANCE))
+					.withLayer();
 				break;
 			case 3:
 				cib1_y_End = -cibHeight/2 - VERTICAL_BTN_DISTANCE;
 				cib2_y_End = +cibHeight/2 + VERTICAL_BTN_DISTANCE;
 				TopOutAdjust = willBeCIBOutsideTop(cib1, cib1_y_End) ? -cib1_y_End : 0;
 				BottomOutAdjust = willBeCIBOutsideBottom(cib2, cib2_y_End) ? -cib2_y_End : 0;
-				cib1.animate().translationX(cib1_x + cibWidth + EXPAND_DISTANCE).
+				cib1.animate().translationX(inv*(cib1_x + cibWidth + EXPAND_DISTANCE)).
 					translationY(cib1_y_End + TopOutAdjust + BottomOutAdjust).withLayer();
-				cib2.animate().translationX(cib2_x + cibWidth + EXPAND_DISTANCE).
+				cib2.animate().translationX(inv*(cib2_x + cibWidth + EXPAND_DISTANCE)).
 					translationY(cib2_y_End + TopOutAdjust + BottomOutAdjust).withLayer();
 				cib1.invalidate();
 				cib2.invalidate();
@@ -168,11 +170,11 @@ public class CircleImgBtnUtils {
 				cib3_y_End = +cibHeight + VERTICAL_BTN_DISTANCE + VERTICAL_BTN_DISTANCE/2;
 				TopOutAdjust = willBeCIBOutsideTop(cib1, cib1_y_End) ? -cib1_y_End : 0;
 				BottomOutAdjust = willBeCIBOutsideBottom(cib3, cib3_y_End) ? -cib3_y_End : 0;
-				cib1.animate().translationX(cib1_x + cibWidth + EXPAND_DISTANCE).
+				cib1.animate().translationX(inv*(cib1_x + cibWidth + EXPAND_DISTANCE)).
 					translationY(cib1_y_End + TopOutAdjust + BottomOutAdjust).withLayer();
-				cib2.animate().translationX(cib2_x + cibWidth + EXPAND_DISTANCE).
+				cib2.animate().translationX(inv*(cib2_x + cibWidth + EXPAND_DISTANCE)).
 					translationY(cib2_y_End + TopOutAdjust + BottomOutAdjust).withLayer();
-				cib3.animate().translationX(cib3_x + cibWidth + EXPAND_DISTANCE).
+				cib3.animate().translationX(inv*(cib3_x + cibWidth + EXPAND_DISTANCE)).
 					translationY(cib3_y_End + TopOutAdjust + BottomOutAdjust).withLayer();
 				break;
 			case 5:
@@ -184,13 +186,13 @@ public class CircleImgBtnUtils {
 						willBeCIBOutsideTop(cib2, cib2_y_End) ? -cib1_y_End : -cib2_y_End : 0;
 				BottomOutAdjust = willBeCIBOutsideBottom(cib4, cib4_y_End) ? 
 						willBeCIBOutsideBottom(cib3, cib3_y_End) ? -cib4_y_End : -cib3_y_End : 0;
-				cib1.animate().translationX(cib1_x + cibWidth + EXPAND_DISTANCE).
+				cib1.animate().translationX(inv*(cib1_x + cibWidth + EXPAND_DISTANCE)).
 					translationY(cib1_y_End + TopOutAdjust + BottomOutAdjust).withLayer();
-				cib2.animate().translationX(cib2_x + cibWidth + EXPAND_DISTANCE).
+				cib2.animate().translationX(inv*(cib2_x + cibWidth + EXPAND_DISTANCE)).
 					translationY(cib2_y_End + TopOutAdjust + BottomOutAdjust).withLayer();
-				cib3.animate().translationX(cib3_x + cibWidth + EXPAND_DISTANCE).
+				cib3.animate().translationX(inv*(cib3_x + cibWidth + EXPAND_DISTANCE)).
 					translationY(cib3_y_End + TopOutAdjust + BottomOutAdjust).withLayer();
-				cib4.animate().translationX(cib4_x + cibWidth + EXPAND_DISTANCE).
+				cib4.animate().translationX(inv*(cib4_x + cibWidth + EXPAND_DISTANCE)).
 					translationY(cib4_y_End + TopOutAdjust + BottomOutAdjust).withLayer();
 				break;
 			case 6:
@@ -203,15 +205,15 @@ public class CircleImgBtnUtils {
 						willBeCIBOutsideTop(cib2, cib2_y_End) ? -cib1_y_End : -cib2_y_End : 0;
 				BottomOutAdjust = willBeCIBOutsideBottom(cib5, cib5_y_End) ? 
 						willBeCIBOutsideBottom(cib4, cib4_y_End) ? -cib5_y_End : -cib4_y_End : 0;
-				cib1.animate().translationX(cib1_x + cibWidth + EXPAND_DISTANCE).
+				cib1.animate().translationX(inv*(cib1_x + cibWidth + EXPAND_DISTANCE)).
 					translationY(cib1_y_End + TopOutAdjust + BottomOutAdjust).withLayer();
-				cib2.animate().translationX(cib2_x + cibWidth + EXPAND_DISTANCE).
+				cib2.animate().translationX(inv*(cib2_x + cibWidth + EXPAND_DISTANCE)).
 					translationY(cib2_y_End + TopOutAdjust + BottomOutAdjust).withLayer();
-				cib3.animate().translationX(cib3_x + cibWidth + EXPAND_DISTANCE).
+				cib3.animate().translationX(inv*(cib3_x + cibWidth + EXPAND_DISTANCE)).
 					translationY(cib3_y_End + TopOutAdjust + BottomOutAdjust).withLayer();
-				cib4.animate().translationX(cib4_x + cibWidth + EXPAND_DISTANCE).
+				cib4.animate().translationX(inv*(cib4_x + cibWidth + EXPAND_DISTANCE)).
 					translationY(cib4_y_End + TopOutAdjust + BottomOutAdjust).withLayer();
-				cib5.animate().translationX(cib5_x + cibWidth + EXPAND_DISTANCE).
+				cib5.animate().translationX(inv*(cib5_x + cibWidth + EXPAND_DISTANCE)).
 					translationY(cib5_y_End + TopOutAdjust + BottomOutAdjust).withLayer();
 				break;
 		}
@@ -220,7 +222,7 @@ public class CircleImgBtnUtils {
 	/**
 	 * Agrupa os botões mostrando apenas o que esta na frente
 	 */
-	void collapse() {
+	void collapse(boolean inverted) {
 		expanded = false;
 		cibg.resetBorderColor();
 		//instancias de botões
@@ -232,15 +234,16 @@ public class CircleImgBtnUtils {
 		final int cibWidth = cibg.getViewWidth();
 		final int cibHeight = cibg.getViewHeight();
 		//posicao inicial dos botões
-		float cib1_x = cib1.getTranslationX(), cib2_x = 0, cib3_x = 0, cib4_x = 0, cib5_x = 0;
+		int inv = (inverted)?-1:1;
+		float cib1_x = inv*(cib1.getTranslationX()), cib2_x = 0, cib3_x = 0, cib4_x = 0, cib5_x = 0;
 		if (cibg.getButtomsCount() > 2)
-			cib2_x = cib2.getTranslationX() + 1*HORIZONTAL_BTN_DISTANCE;
+			cib2_x = inv*cib2.getTranslationX() + 1*HORIZONTAL_BTN_DISTANCE;
 		if (cibg.getButtomsCount() > 3)
-			cib3_x = cib3.getTranslationX() + 2*HORIZONTAL_BTN_DISTANCE;
+			cib3_x = inv*cib3.getTranslationX() + 2*HORIZONTAL_BTN_DISTANCE;
 		if (cibg.getButtomsCount() > 4)
-			cib4_x = cib4.getTranslationX() + 3*HORIZONTAL_BTN_DISTANCE;
+			cib4_x = inv*cib4.getTranslationX() + 3*HORIZONTAL_BTN_DISTANCE;
 		if (cibg.getButtomsCount() > 5)
-			cib5_x = cib5.getTranslationX() + 4*HORIZONTAL_BTN_DISTANCE;
+			cib5_x = inv*cib5.getTranslationX() + 4*HORIZONTAL_BTN_DISTANCE;
 		//posição final dos botões e ajustes se algum saiu da tela
 		float cib1_y_End = 0, cib2_y_End = 0, cib3_y_End = 0, cib4_y_End = 0, cib5_y_End = 0;
 		switch (cibg.getButtomsCount()) {

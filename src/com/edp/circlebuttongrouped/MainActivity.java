@@ -26,7 +26,7 @@ public class MainActivity extends Activity {
 		((CircleImgBtnGroup) findViewById(R.id.cibBottom4)).configGroup(rlLeft);
 		((CircleImgBtnGroup) findViewById(R.id.cibBottom5)).configGroup(rlLeft);
 		((CircleImgBtnGroup) findViewById(R.id.cibBottom6)).configGroup(rlLeft);
-		((CircleImgBtnGroup) findViewById(R.id.cib3)).configGroup(rlLeft);
+		((CircleImgBtnGroup) findViewById(R.id.cibR3)).configGroup(rlLeft);
 		((CircleImgBtnGroup) findViewById(R.id.cib4)).configGroup(rlLeft);
 		((CircleImgBtnGroup) findViewById(R.id.cib5_1)).configGroup(rlLeft);
 		((CircleImgBtnGroup) findViewById(R.id.cib5_2)).configGroup(rlLeft);
@@ -34,6 +34,11 @@ public class MainActivity extends Activity {
 		((CircleImgBtnGroup) findViewById(R.id.cib6_1)).configGroup(rlLeft);
 		((CircleImgBtnGroup) findViewById(R.id.cib6_2)).configGroup(rlLeft);
 		((CircleImgBtnGroup) findViewById(R.id.cib6_3)).configGroup(rlLeft);
+		((CircleImgBtnGroup) findViewById(R.id.cibR1)).configGroup(rlLeft);
+		((CircleImgBtnGroup) findViewById(R.id.cibR2)).configGroup(rlLeft);
+		((CircleImgBtnGroup) findViewById(R.id.cibR3)).configGroup(rlLeft);
+		((CircleImgBtnGroup) findViewById(R.id.cibR4)).configGroup(rlLeft);
+		((CircleImgBtnGroup) findViewById(R.id.cibR5)).configGroup(rlLeft);
 	}
 
 	@Override

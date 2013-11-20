@@ -179,8 +179,7 @@ containing a value of this type.
         public static final int youre_welcome=0x7f02001e;
     }
     public static final class id {
-        public static final int action_settings=0x7f080012;
-        public static final int cib3=0x7f080010;
+        public static final int action_settings=0x7f080016;
         public static final int cib4=0x7f080011;
         public static final int cib5_1=0x7f08000b;
         public static final int cib5_2=0x7f08000f;
@@ -192,6 +191,11 @@ containing a value of this type.
         public static final int cibBottom4=0x7f080007;
         public static final int cibBottom5=0x7f080006;
         public static final int cibBottom6=0x7f080009;
+        public static final int cibR1=0x7f080012;
+        public static final int cibR2=0x7f080014;
+        public static final int cibR3=0x7f080010;
+        public static final int cibR4=0x7f080015;
+        public static final int cibR5=0x7f080013;
         public static final int cibTop3=0x7f080002;
         public static final int cibTop4=0x7f080004;
         public static final int cibTop5=0x7f080003;
