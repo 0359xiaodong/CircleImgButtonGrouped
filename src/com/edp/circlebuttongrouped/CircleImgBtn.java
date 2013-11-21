@@ -54,6 +54,13 @@ public class CircleImgBtn extends ImageView{
 			addShadow();
 	}
 
+	public int getImageResource() {
+		if(getTag() instanceof Integer)
+			return (Integer)getTag();
+		else
+			return 0;
+	}
+
 	public int getViewWidth() {
 		return width;
 	}

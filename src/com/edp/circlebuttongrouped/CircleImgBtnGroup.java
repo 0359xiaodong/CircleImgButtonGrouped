@@ -22,6 +22,7 @@ public class CircleImgBtnGroup extends CircleImgBtn implements OnClickListener, 
 	private boolean collapseAtClick, inverted;
 	private CircleImgBtnUtils cibUtils;
 	private TextView lbGroupLabel;
+	private OnClickListener onClickListener;
 	ArrayList<CircleImgBtn> CIBs = new ArrayList<CircleImgBtn>();
 
 	@SuppressLint("Recycle")
@@ -42,7 +43,9 @@ public class CircleImgBtnGroup extends CircleImgBtn implements OnClickListener, 
 	 * Configura o botão da frente que é este componente
 	 */
 	private void configMainImgBtn() {
-		setImageResource(getImgCIVs(0));
+		final int imgID = getImgCIVs(0);
+		setImageResource(imgID);
+		setTag(imgID);
 		addShadow();
 		lbGroupLabel = new TextView(getContext());
 		lbGroupLabel.setText("");
@@ -106,9 +109,10 @@ public class CircleImgBtnGroup extends CircleImgBtn implements OnClickListener, 
 			circleImgBtn.setHeight(height);
 			circleImgBtn.setWidth(width);
 			circleImgBtn.addShadow();
-			circleImgBtn.setImageResource(getImgCIVs(i));
+			final int imgID = getImgCIVs(i);
+			circleImgBtn.setImageResource(imgID);
+			circleImgBtn.setTag(imgID);
 			circleImgBtn.setOnClickListener(this);
-			circleImgBtn.setOnLongClickListener(this);
 			CIBs.add(circleImgBtn);
 		}
 	}
@@ -117,10 +121,11 @@ public class CircleImgBtnGroup extends CircleImgBtn implements OnClickListener, 
 	 * Posiciona os botões no relativelayout informado 
 	 * @param rl - RelativeLayout o qual será pai dos botões agrupados
 	 */
-	public void configGroup(RelativeLayout rl){
+	public void configGroup(OnClickListener cl, RelativeLayout rl){
 		if(this.rl != null)
 			return;
 		this.rl = rl;
+		onClickListener = cl;
 		RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(
 				LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
 		params.addRule(RelativeLayout.ALIGN_LEFT, this.getId());
@@ -148,14 +153,6 @@ public class CircleImgBtnGroup extends CircleImgBtn implements OnClickListener, 
 		bringToFront();
 	}
 
-	@Override
-	public void onClick(View v) {
-		if(cibUtils.isExpanded() && collapseAtClick & v.equals(this)){
-			cibUtils.collapse(inverted);
-		}
-//		showInfo(v);
-	}
-
 	void showInfo(View v) {
 		int num = CIBs.indexOf(v);
 		float top = CIBs.get(num).getTop() + CIBs.get(num).getTranslationY();
@@ -163,6 +160,16 @@ public class CircleImgBtnGroup extends CircleImgBtn implements OnClickListener, 
 		String msg = "Clicou no botão " + num
 				+ ". x,y: " + left + "," + top;
 		Toast.makeText(getContext(), msg, Toast.LENGTH_LONG).show();
+	}
+
+	@Override
+	public void onClick(View v) {
+		if(cibUtils.isExpanded() && collapseAtClick & v.equals(this)){
+			cibUtils.collapse(inverted);
+		}
+//		showInfo(v);
+		if(onClickListener != null)
+			onClickListener.onClick(v);
 	}
 
 	@Override

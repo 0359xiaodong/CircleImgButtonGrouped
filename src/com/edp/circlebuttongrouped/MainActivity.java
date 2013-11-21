@@ -18,27 +18,27 @@ public class MainActivity extends Activity {
 	}
 
 	private void createGroup() {
-		((CircleImgBtnGroup) findViewById(R.id.cibTop3)).configGroup(rlLeft);
-		((CircleImgBtnGroup) findViewById(R.id.cibTop4)).configGroup(rlLeft);
-		((CircleImgBtnGroup) findViewById(R.id.cibTop5)).configGroup(rlLeft);
-		((CircleImgBtnGroup) findViewById(R.id.cibTop6)).configGroup(rlLeft);
-		((CircleImgBtnGroup) findViewById(R.id.cibBottom3)).configGroup(rlLeft);
-		((CircleImgBtnGroup) findViewById(R.id.cibBottom4)).configGroup(rlLeft);
-		((CircleImgBtnGroup) findViewById(R.id.cibBottom5)).configGroup(rlLeft);
-		((CircleImgBtnGroup) findViewById(R.id.cibBottom6)).configGroup(rlLeft);
-		((CircleImgBtnGroup) findViewById(R.id.cibR3)).configGroup(rlLeft);
-		((CircleImgBtnGroup) findViewById(R.id.cib4)).configGroup(rlLeft);
-		((CircleImgBtnGroup) findViewById(R.id.cib5_1)).configGroup(rlLeft);
-		((CircleImgBtnGroup) findViewById(R.id.cib5_2)).configGroup(rlLeft);
-		((CircleImgBtnGroup) findViewById(R.id.cib5_3)).configGroup(rlLeft);
-		((CircleImgBtnGroup) findViewById(R.id.cib6_1)).configGroup(rlLeft);
-		((CircleImgBtnGroup) findViewById(R.id.cib6_2)).configGroup(rlLeft);
-		((CircleImgBtnGroup) findViewById(R.id.cib6_3)).configGroup(rlLeft);
-		((CircleImgBtnGroup) findViewById(R.id.cibR1)).configGroup(rlLeft);
-		((CircleImgBtnGroup) findViewById(R.id.cibR2)).configGroup(rlLeft);
-		((CircleImgBtnGroup) findViewById(R.id.cibR3)).configGroup(rlLeft);
-		((CircleImgBtnGroup) findViewById(R.id.cibR4)).configGroup(rlLeft);
-		((CircleImgBtnGroup) findViewById(R.id.cibR5)).configGroup(rlLeft);
+		((CircleImgBtnGroup) findViewById(R.id.cibTop3)).configGroup(null, rlLeft);
+		((CircleImgBtnGroup) findViewById(R.id.cibTop4)).configGroup(null, rlLeft);
+		((CircleImgBtnGroup) findViewById(R.id.cibTop5)).configGroup(null, rlLeft);
+		((CircleImgBtnGroup) findViewById(R.id.cibTop6)).configGroup(null, rlLeft);
+		((CircleImgBtnGroup) findViewById(R.id.cibBottom3)).configGroup(null, rlLeft);
+		((CircleImgBtnGroup) findViewById(R.id.cibBottom4)).configGroup(null, rlLeft);
+		((CircleImgBtnGroup) findViewById(R.id.cibBottom5)).configGroup(null, rlLeft);
+		((CircleImgBtnGroup) findViewById(R.id.cibBottom6)).configGroup(null, rlLeft);
+		((CircleImgBtnGroup) findViewById(R.id.cibR3)).configGroup(null, rlLeft);
+		((CircleImgBtnGroup) findViewById(R.id.cib4)).configGroup(null, rlLeft);
+		((CircleImgBtnGroup) findViewById(R.id.cib5_1)).configGroup(null, rlLeft);
+		((CircleImgBtnGroup) findViewById(R.id.cib5_2)).configGroup(null, rlLeft);
+		((CircleImgBtnGroup) findViewById(R.id.cib5_3)).configGroup(null, rlLeft);
+		((CircleImgBtnGroup) findViewById(R.id.cib6_1)).configGroup(null, rlLeft);
+		((CircleImgBtnGroup) findViewById(R.id.cib6_2)).configGroup(null, rlLeft);
+		((CircleImgBtnGroup) findViewById(R.id.cib6_3)).configGroup(null, rlLeft);
+		((CircleImgBtnGroup) findViewById(R.id.cibR1)).configGroup(null, rlLeft);
+		((CircleImgBtnGroup) findViewById(R.id.cibR2)).configGroup(null, rlLeft);
+		((CircleImgBtnGroup) findViewById(R.id.cibR3)).configGroup(null, rlLeft);
+		((CircleImgBtnGroup) findViewById(R.id.cibR4)).configGroup(null, rlLeft);
+		((CircleImgBtnGroup) findViewById(R.id.cibR5)).configGroup(null, rlLeft);
 	}
 
 	@Override

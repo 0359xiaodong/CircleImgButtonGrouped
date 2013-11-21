@@ -152,7 +152,7 @@ public class CircleImgBtnUtils {
 		switch (cibg.getButtomsCount()) {
 			case 2:
 				cib1.animate().translationX(inv*(cib1_x + cibWidth + EXPAND_DISTANCE))
-					.withLayer();
+					;
 				break;
 			case 3:
 				cib1_y_End = -cibHeight/2 - VERTICAL_BTN_DISTANCE;
@@ -160,9 +160,9 @@ public class CircleImgBtnUtils {
 				TopOutAdjust = willBeCIBOutsideTop(cib1, cib1_y_End) ? -cib1_y_End : 0;
 				BottomOutAdjust = willBeCIBOutsideBottom(cib2, cib2_y_End) ? -cib2_y_End : 0;
 				cib1.animate().translationX(inv*(cib1_x + cibWidth + EXPAND_DISTANCE)).
-					translationY(cib1_y_End + TopOutAdjust + BottomOutAdjust).withLayer();
+					translationY(cib1_y_End + TopOutAdjust + BottomOutAdjust);
 				cib2.animate().translationX(inv*(cib2_x + cibWidth + EXPAND_DISTANCE)).
-					translationY(cib2_y_End + TopOutAdjust + BottomOutAdjust).withLayer();
+					translationY(cib2_y_End + TopOutAdjust + BottomOutAdjust);
 				cib1.invalidate();
 				cib2.invalidate();
 				break;
@@ -173,11 +173,11 @@ public class CircleImgBtnUtils {
 				TopOutAdjust = willBeCIBOutsideTop(cib1, cib1_y_End) ? -cib1_y_End : 0;
 				BottomOutAdjust = willBeCIBOutsideBottom(cib3, cib3_y_End) ? -cib3_y_End : 0;
 				cib1.animate().translationX(inv*(cib1_x + cibWidth + EXPAND_DISTANCE)).
-					translationY(cib1_y_End + TopOutAdjust + BottomOutAdjust).withLayer();
+					translationY(cib1_y_End + TopOutAdjust + BottomOutAdjust);
 				cib2.animate().translationX(inv*(cib2_x + cibWidth + EXPAND_DISTANCE)).
-					translationY(cib2_y_End + TopOutAdjust + BottomOutAdjust).withLayer();
+					translationY(cib2_y_End + TopOutAdjust + BottomOutAdjust);
 				cib3.animate().translationX(inv*(cib3_x + cibWidth + EXPAND_DISTANCE)).
-					translationY(cib3_y_End + TopOutAdjust + BottomOutAdjust).withLayer();
+					translationY(cib3_y_End + TopOutAdjust + BottomOutAdjust);
 				break;
 			case 5:
 				cib1_y_End = -cibHeight - cibHeight/2 - 3*VERTICAL_BTN_DISTANCE;
@@ -189,13 +189,13 @@ public class CircleImgBtnUtils {
 				BottomOutAdjust = willBeCIBOutsideBottom(cib4, cib4_y_End) ? 
 						willBeCIBOutsideBottom(cib3, cib3_y_End) ? -cib4_y_End : -cib3_y_End : 0;
 				cib1.animate().translationX(inv*(cib1_x + cibWidth + EXPAND_DISTANCE)).
-					translationY(cib1_y_End + TopOutAdjust + BottomOutAdjust).withLayer();
+					translationY(cib1_y_End + TopOutAdjust + BottomOutAdjust);
 				cib2.animate().translationX(inv*(cib2_x + cibWidth + EXPAND_DISTANCE)).
-					translationY(cib2_y_End + TopOutAdjust + BottomOutAdjust).withLayer();
+					translationY(cib2_y_End + TopOutAdjust + BottomOutAdjust);
 				cib3.animate().translationX(inv*(cib3_x + cibWidth + EXPAND_DISTANCE)).
-					translationY(cib3_y_End + TopOutAdjust + BottomOutAdjust).withLayer();
+					translationY(cib3_y_End + TopOutAdjust + BottomOutAdjust);
 				cib4.animate().translationX(inv*(cib4_x + cibWidth + EXPAND_DISTANCE)).
-					translationY(cib4_y_End + TopOutAdjust + BottomOutAdjust).withLayer();
+					translationY(cib4_y_End + TopOutAdjust + BottomOutAdjust);
 				break;
 			case 6:
 				cib1_y_End = 2*(-cibHeight - VERTICAL_BTN_DISTANCE - VERTICAL_BTN_DISTANCE/2); 
@@ -208,15 +208,15 @@ public class CircleImgBtnUtils {
 				BottomOutAdjust = willBeCIBOutsideBottom(cib5, cib5_y_End) ? 
 						willBeCIBOutsideBottom(cib4, cib4_y_End) ? -cib5_y_End : -cib4_y_End : 0;
 				cib1.animate().translationX(inv*(cib1_x + cibWidth + EXPAND_DISTANCE)).
-					translationY(cib1_y_End + TopOutAdjust + BottomOutAdjust).withLayer();
+					translationY(cib1_y_End + TopOutAdjust + BottomOutAdjust);
 				cib2.animate().translationX(inv*(cib2_x + cibWidth + EXPAND_DISTANCE)).
-					translationY(cib2_y_End + TopOutAdjust + BottomOutAdjust).withLayer();
+					translationY(cib2_y_End + TopOutAdjust + BottomOutAdjust);
 				cib3.animate().translationX(inv*(cib3_x + cibWidth + EXPAND_DISTANCE)).
-					translationY(cib3_y_End + TopOutAdjust + BottomOutAdjust).withLayer();
+					translationY(cib3_y_End + TopOutAdjust + BottomOutAdjust);
 				cib4.animate().translationX(inv*(cib4_x + cibWidth + EXPAND_DISTANCE)).
-					translationY(cib4_y_End + TopOutAdjust + BottomOutAdjust).withLayer();
+					translationY(cib4_y_End + TopOutAdjust + BottomOutAdjust);
 				cib5.animate().translationX(inv*(cib5_x + cibWidth + EXPAND_DISTANCE)).
-					translationY(cib5_y_End + TopOutAdjust + BottomOutAdjust).withLayer();
+					translationY(cib5_y_End + TopOutAdjust + BottomOutAdjust);
 				break;
 		}
 	}
@@ -252,7 +252,7 @@ public class CircleImgBtnUtils {
 		float cib1_y_End = 0, cib2_y_End = 0, cib3_y_End = 0, cib4_y_End = 0, cib5_y_End = 0;
 		switch (cibg.getButtomsCount()) {
 			case 2:
-				cib1.animate().translationX(cib1_x - cibWidth - EXPAND_DISTANCE).withLayer();
+				cib1.animate().translationX(cib1_x - cibWidth - EXPAND_DISTANCE);
 				break;
 			case 3:
 				cib1_y_End = +cibHeight/2 + VERTICAL_BTN_DISTANCE;
@@ -266,9 +266,9 @@ public class CircleImgBtnUtils {
 					cib2_y_End -= BottomOutAdjust;
 				}
 				cib1.animate().translationX(cib1_x - cibWidth - EXPAND_DISTANCE).
-					translationY(cib1.getTranslationY() + cib1_y_End).withLayer();
+					translationY(cib1.getTranslationY() + cib1_y_End);
 				cib2.animate().translationX(cib2_x - cibWidth - EXPAND_DISTANCE).
-					translationY(cib2.getTranslationY() + cib2_y_End).withLayer();
+					translationY(cib2.getTranslationY() + cib2_y_End);
 				break;
 			case 4:
 				cib1_y_End = +cibHeight + VERTICAL_BTN_DISTANCE + VERTICAL_BTN_DISTANCE/2;
@@ -285,11 +285,11 @@ public class CircleImgBtnUtils {
 					cib3_y_End -= BottomOutAdjust;
 				}
 				cib1.animate().translationX(cib1_x - cibWidth - EXPAND_DISTANCE).
-					translationY(cib1.getTranslationY() + cib1_y_End).withLayer();
+					translationY(cib1.getTranslationY() + cib1_y_End);
 				cib2.animate().translationX(cib2_x - cibWidth - EXPAND_DISTANCE).
-					translationY(cib2.getTranslationY() + cib2_y_End).withLayer();
+					translationY(cib2.getTranslationY() + cib2_y_End);
 				cib3.animate().translationX(cib3_x - cibWidth - EXPAND_DISTANCE).
-					translationY(cib3.getTranslationY() + cib3_y_End).withLayer();
+					translationY(cib3.getTranslationY() + cib3_y_End);
 				break;
 			case 5:
 				cib1_y_End = +cibHeight + cibHeight/2 + 3*VERTICAL_BTN_DISTANCE;
@@ -309,13 +309,13 @@ public class CircleImgBtnUtils {
 					cib4_y_End -= BottomOutAdjust;
 				}
 				cib1.animate().translationX(cib1_x - cibWidth - EXPAND_DISTANCE).
-					translationY(cib1.getTranslationY() + cib1_y_End).withLayer();
+					translationY(cib1.getTranslationY() + cib1_y_End);
 				cib2.animate().translationX(cib2_x - cibWidth - EXPAND_DISTANCE).
-					translationY(cib2.getTranslationY() + cib2_y_End).withLayer();
+					translationY(cib2.getTranslationY() + cib2_y_End);
 				cib3.animate().translationX(cib3_x - cibWidth - EXPAND_DISTANCE).
-					translationY(cib3.getTranslationY() + cib3_y_End).withLayer();
+					translationY(cib3.getTranslationY() + cib3_y_End);
 				cib4.animate().translationX(cib4_x - cibWidth - EXPAND_DISTANCE).
-					translationY(cib4.getTranslationY() + cib4_y_End).withLayer();
+					translationY(cib4.getTranslationY() + cib4_y_End);
 				break;
 			case 6:
 				cib1_y_End = 2*(+cibHeight + VERTICAL_BTN_DISTANCE + VERTICAL_BTN_DISTANCE/2);
@@ -338,15 +338,15 @@ public class CircleImgBtnUtils {
 					cib5_y_End -= BottomOutAdjust;
 				}
 				cib1.animate().translationX(cib1_x - cibWidth - EXPAND_DISTANCE).
-					translationY(cib1.getTranslationY() + cib1_y_End).withLayer();
+					translationY(cib1.getTranslationY() + cib1_y_End);
 				cib2.animate().translationX(cib2_x - cibWidth - EXPAND_DISTANCE).
-					translationY(cib2.getTranslationY() + cib2_y_End).withLayer();
+					translationY(cib2.getTranslationY() + cib2_y_End);
 				cib3.animate().translationX(cib3_x - cibWidth - EXPAND_DISTANCE).
-					translationY(cib3.getTranslationY() + cib3_y_End).withLayer();
+					translationY(cib3.getTranslationY() + cib3_y_End);
 				cib4.animate().translationX(cib4_x - cibWidth - EXPAND_DISTANCE).
-					translationY(cib4.getTranslationY() + cib4_y_End).withLayer();
+					translationY(cib4.getTranslationY() + cib4_y_End);
 				cib5.animate().translationX(cib5_x - cibWidth - EXPAND_DISTANCE).
-					translationY(cib5.getTranslationY() + cib5_y_End).withLayer();
+					translationY(cib5.getTranslationY() + cib5_y_End);
 				break;
 		}
 	}
