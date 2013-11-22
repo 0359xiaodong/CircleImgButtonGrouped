@@ -22,7 +22,7 @@ public class CircleImgBtnGroup extends CircleImgBtn implements OnClickListener, 
 	private boolean collapseAtClick, inverted;
 	private CircleImgBtnUtils cibUtils;
 	private TextView lbGroupLabel;
-	private OnClickListener onClickListener;
+	private OnCircleButtonClickListener onClickListener;
 	ArrayList<CircleImgBtn> CIBs = new ArrayList<CircleImgBtn>();
 
 	@SuppressLint("Recycle")
@@ -121,7 +121,7 @@ public class CircleImgBtnGroup extends CircleImgBtn implements OnClickListener, 
 	 * Posiciona os botões no relativelayout informado 
 	 * @param rl - RelativeLayout o qual será pai dos botões agrupados
 	 */
-	public void configGroup(OnClickListener cl, RelativeLayout rl){
+	public void configGroup(OnCircleButtonClickListener cl, RelativeLayout rl){
 		if(this.rl != null)
 			return;
 		this.rl = rl;
@@ -168,8 +168,10 @@ public class CircleImgBtnGroup extends CircleImgBtn implements OnClickListener, 
 			cibUtils.collapse(inverted);
 		}
 //		showInfo(v);
-		if(onClickListener != null)
-			onClickListener.onClick(v);
+		if(onClickListener != null){
+			CircleImgBtn cib = (CircleImgBtn)v;
+			onClickListener.onClick(cib, cib.getImageResource());
+		}
 	}
 
 	@Override

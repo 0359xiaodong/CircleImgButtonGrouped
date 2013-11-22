@@ -10,6 +10,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Shader;
 import android.graphics.drawable.BitmapDrawable;
+import android.os.Build;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 
@@ -30,7 +31,7 @@ public class CircleImgBtn extends ImageView{
 		this(context, null);
 	}
 
-	@SuppressLint("Recycle")
+	@SuppressLint({ "Recycle"})
 	public CircleImgBtn(Context context, AttributeSet attrs) {
 		super(context, attrs);
 
@@ -52,6 +53,12 @@ public class CircleImgBtn extends ImageView{
 		
 		if(attributes.getBoolean(R.styleable.CircleImgBtn_shadow, false))
 			addShadow();
+
+//      if (Build.VERSION.SDK_INT >= 16){
+//          setBackground(getResources().getDrawable(R.drawable.card_selector));
+//      } else {
+//          setBackgroundDrawable(getResources().getDrawable(R.drawable.card_selector));
+//      }
 	}
 
 	public int getImageResource() {

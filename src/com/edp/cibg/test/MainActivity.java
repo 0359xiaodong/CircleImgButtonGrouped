@@ -1,4 +1,10 @@
-package com.edp.circlebuttongrouped;
+package com.edp.cibg.test;
+
+import com.edp.circlebuttongrouped.CircleImgBtnGroup;
+import com.edp.circlebuttongrouped.R;
+import com.edp.circlebuttongrouped.R.id;
+import com.edp.circlebuttongrouped.R.layout;
+import com.edp.circlebuttongrouped.R.menu;
 
 import android.app.Activity;
 import android.os.Bundle;
