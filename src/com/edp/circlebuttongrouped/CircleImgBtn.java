@@ -4,10 +4,16 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
+import android.graphics.Bitmap.Config;
+import android.graphics.BitmapFactory;
 import android.graphics.BitmapShader;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.PorterDuff.Mode;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.Rect;
+import android.graphics.RectF;
 import android.graphics.Shader;
 import android.graphics.drawable.BitmapDrawable;
 import android.util.AttributeSet;
@@ -116,7 +122,7 @@ public class CircleImgBtn extends ImageView{
 
 		if (image != null) {
 			BitmapShader shader = new BitmapShader(Bitmap.createScaledBitmap(image, canvas.getWidth(), 
-					canvas.getHeight(), false), Shader.TileMode.CLAMP, Shader.TileMode.CLAMP);
+					canvas.getHeight(), true), Shader.TileMode.CLAMP, Shader.TileMode.CLAMP);
 			paint.setShader(shader);
 			int circleCenter = width / 2;
 
