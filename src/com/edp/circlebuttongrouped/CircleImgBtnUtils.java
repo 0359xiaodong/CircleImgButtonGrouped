@@ -10,7 +10,7 @@ public class CircleImgBtnUtils {
 	public static final int EXPAND_DISTANCE = 25;
 	public static final int VERTICAL_BTN_DISTANCE = 5;
 	public static final int HORIZONTAL_BTN_DISTANCE = 5;
-	private static final int EXPANDED_COLOR = Color.BLUE;
+	private static final int EXPANDED_COLOR = Color.parseColor("#33B5E5");
 	
 	private boolean expanded;
 	private CircleImgBtnGroup cibg;
