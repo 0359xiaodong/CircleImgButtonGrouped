@@ -24,6 +24,7 @@ public class CircleImgBtnGroup extends CircleImgBtn implements OnClickListener, 
 	private TextView lbGroupLabel;
 	private OnCircleButtonClickListener onClickListener;
 	ArrayList<CircleImgBtn> CIBs = new ArrayList<CircleImgBtn>();
+	private ArrayList<RelativeLayout> othersRl = new ArrayList<RelativeLayout>();
 
 	@SuppressLint("Recycle")
 	public CircleImgBtnGroup(Context context, AttributeSet attrs) {
@@ -194,12 +195,24 @@ public class CircleImgBtnGroup extends CircleImgBtn implements OnClickListener, 
 			cibUtils.collapse(inverted);
 	}
 	
+	public void addRLayoutWithOtherGroups(RelativeLayout rl){
+		othersRl.add(rl);
+	}
+	
 	private void collapseAllOthers() {
+		//colapse para os CIBGs desse layout
 		for(int i=0; i<rl.getChildCount(); i++)
 			if(rl.getChildAt(i) instanceof CircleImgBtnGroup){
 				CircleImgBtnGroup cibg = (CircleImgBtnGroup)rl.getChildAt(i);
 				cibg.collapse();
 			}
+		//colapse para os CIBGs de outros layouts
+		for (RelativeLayout oRl : othersRl)
+			for(int i=0; i<oRl.getChildCount(); i++)
+				if(oRl.getChildAt(i) instanceof CircleImgBtnGroup){
+					CircleImgBtnGroup cibg = (CircleImgBtnGroup)oRl.getChildAt(i);
+					cibg.collapse();
+				}
 	}
 
 }
