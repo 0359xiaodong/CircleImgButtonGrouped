@@ -17,6 +17,7 @@
         <attr name="label" format="string"></attr>
         <attr name="inverted" format="boolean"></attr>
         <attr name="collapseAtClick" format="boolean"></attr>
+        <attr name="sendBackAtClick" format="boolean"></attr>
         <attr name="imgSrcCIB1" format="reference"></attr>
         <attr name="imgSrcCIB2" format="reference"></attr>
         <attr name="imgSrcCIB3" format="reference"></attr>
@@ -25,8 +26,8 @@
         <attr name="imgSrcCIB6" format="reference"></attr>
     </declare-styleable>
             
-    <declare-styleable name="Theme">
-        <attr name="circularImageViewStyle" format="reference"></attr>
-    </declare-styleable>
+<!--     <declare-styleable name="Theme"> -->
+<!--         <attr name="circularImageViewStyle" format="reference"></attr> -->
+<!--     </declare-styleable> -->
 
 </resources>

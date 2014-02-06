@@ -10,7 +10,6 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Shader;
 import android.graphics.drawable.BitmapDrawable;
-import android.os.Build;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 
@@ -59,6 +58,12 @@ public class CircleImgBtn extends ImageView{
 //      } else {
 //          setBackgroundDrawable(getResources().getDrawable(R.drawable.card_selector));
 //      }
+	}
+
+	@Override
+	public void setImageResource(int resId) {
+		setTag(Integer.valueOf(resId));
+		super.setImageResource(resId);
 	}
 
 	public int getImageResource() {

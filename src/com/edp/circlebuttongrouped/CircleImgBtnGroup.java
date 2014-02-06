@@ -19,7 +19,7 @@ public class CircleImgBtnGroup extends CircleImgBtn implements OnClickListener, 
 	private RelativeLayout rl;
 	private int height, width, count;
 	private TypedArray attribs;
-	private boolean collapseAtClick, inverted;
+	private boolean collapseAtClick, sendBackAtClick, inverted;
 	private CircleImgBtnUtils cibUtils;
 	private TextView lbGroupLabel;
 	private OnCircleButtonClickListener onClickListener;
@@ -32,16 +32,17 @@ public class CircleImgBtnGroup extends CircleImgBtn implements OnClickListener, 
 		cibUtils = new CircleImgBtnUtils(this);
 		attribs = context.obtainStyledAttributes(attrs, R.styleable.CircleImgBtnGroup);
 		collapseAtClick = attribs.getBoolean(R.styleable.CircleImgBtnGroup_collapseAtClick, true);
+		sendBackAtClick = attribs.getBoolean(R.styleable.CircleImgBtnGroup_sendBackAtClick, true);
 		configMainImgBtn();
-		setHeight(attribs.getInt(R.styleable.CircleImgBtnGroup_ibHeight, 100));
-		setWidth(attribs.getInt(R.styleable.CircleImgBtnGroup_ibWidth, 100));
+		setHeight(attribs.getInt(R.styleable.CircleImgBtnGroup_ibHeight, 30));
+		setWidth(attribs.getInt(R.styleable.CircleImgBtnGroup_ibWidth, 30));
 		setButtomsCount(attribs.getInt(R.styleable.CircleImgBtnGroup_ibCount, 3));
 		setGroupLabel(attribs.getString(R.styleable.CircleImgBtnGroup_label));
 		inverted = attribs.getBoolean(R.styleable.CircleImgBtnGroup_inverted, false);
 	}
 
 	/**
-	 * Configura o botão da frente que é este componente
+	 * Configura o botï¿½o da frente que ï¿½ este componente
 	 */
 	private void configMainImgBtn() {
 		final int imgID = getImgCIVs(0);
@@ -96,7 +97,7 @@ public class CircleImgBtnGroup extends CircleImgBtn implements OnClickListener, 
 		lbGroupLabel.setText(label);
 	}
 	/**
-	 * configura a qtd de botões e os instancia
+	 * configura a qtd de botï¿½es e os instancia
 	 * @param count
 	 */
 	public void setButtomsCount(int count) {
@@ -119,12 +120,12 @@ public class CircleImgBtnGroup extends CircleImgBtn implements OnClickListener, 
 	}
 
 	/**
-	 * Posiciona os botões no relativelayout informado 
-	 * @param rl - RelativeLayout o qual será pai dos botões agrupados
+	 * Posiciona os botï¿½es no relativelayout informado 
+	 * @param rl - RelativeLayout o qual serï¿½ pai dos botï¿½es agrupados
 	 */
-	public void configGroup(OnCircleButtonClickListener cl, RelativeLayout rl){
+	public CircleImgBtnGroup configGroup(OnCircleButtonClickListener cl, RelativeLayout rl){
 		if(this.rl != null)
-			return;
+			return this;
 		this.rl = rl;
 		onClickListener = cl;
 		RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(
@@ -152,27 +153,63 @@ public class CircleImgBtnGroup extends CircleImgBtn implements OnClickListener, 
 			rl.addView(cib);
 		}
 		bringToFront();
+		return this;
 	}
 
 	void showInfo(View v) {
 		int num = CIBs.indexOf(v);
 		float top = CIBs.get(num).getTop() + CIBs.get(num).getTranslationY();
 		float left = CIBs.get(num).getLeft() + CIBs.get(num).getTranslationX();
-		String msg = "Clicou no botão " + num
+		String msg = "Clicou no botï¿½o " + num
 				+ ". x,y: " + left + "," + top;
 		Toast.makeText(getContext(), msg, Toast.LENGTH_LONG).show();
 	}
 
 	@Override
 	public void onClick(View v) {
-		if(cibUtils.isExpanded() && collapseAtClick & v.equals(this)){
-			cibUtils.collapse(inverted);
-		}
 //		showInfo(v);
-		if(onClickListener != null){
-			CircleImgBtn cib = (CircleImgBtn)v;
-			onClickListener.onClick(cib, cib.getImageResource());
+		CircleImgBtn cib = (CircleImgBtn)v;
+		//Comprima se expandido
+		if(cibUtils.isExpanded()){
+			if(onClickListener != null){
+				onClickListener.onClick(cib, cib.getImageResource());
+			}
+//			if(sendBackAtClick)
+//				bringCIBToFront(cib.getImageResource());
+			if(collapseAtClick){
+				cibUtils.collapse(inverted);
+			}
+		}else{
+			onClickListener.onClickQuickAction(this, cib.getImageResource());
 		}
+		if(sendBackAtClick){
+			bringCIBToFront(cib.getImageResource());
+			sendCIBToBack();
+		}
+	}
+
+	public void bringCIBToFront(int res) {
+		if(CIBs.size() >= 2){
+			while(CIBs.get(0).getImageResource() != res)
+				swapImages();
+			invalidate();
+		}
+	}
+
+	private void sendCIBToBack() {
+		if(CIBs.size() >= 2){
+			swapImages();
+			invalidate();
+		}
+	}
+
+	private void swapImages() {
+		int firstImg = CIBs.get(0).getImageResource();
+		for (int i=0; i<CIBs.size()-1; i++){
+			int proxImg = CIBs.get(i+1).getImageResource();
+			CIBs.get(i).setImageResource(proxImg);
+		}
+		CIBs.get(CIBs.size()-1).setImageResource(firstImg);
 	}
 
 	@Override
