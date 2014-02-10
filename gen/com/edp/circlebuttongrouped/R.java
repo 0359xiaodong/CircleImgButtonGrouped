@@ -77,27 +77,27 @@ containing a value of this type.
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static final int imgSrcCIB1=0x7f01000d;
+        public static final int imgSrcCIB1=0x7f01000e;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static final int imgSrcCIB2=0x7f01000e;
+        public static final int imgSrcCIB2=0x7f01000f;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static final int imgSrcCIB3=0x7f01000f;
+        public static final int imgSrcCIB3=0x7f010010;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static final int imgSrcCIB4=0x7f010010;
+        public static final int imgSrcCIB4=0x7f010011;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static final int imgSrcCIB5=0x7f010011;
+        public static final int imgSrcCIB5=0x7f010012;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static final int imgSrcCIB6=0x7f010012;
+        public static final int imgSrcCIB6=0x7f010013;
         /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -130,6 +130,14 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int shadow=0x7f010005;
+        /** <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int timeoutToCollapse=0x7f01000d;
         /** <p>Must be an integer value, such as "<code>100</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -390,6 +398,7 @@ containing a value of this type.
            <tr><td><code>{@link #CircleImgBtnGroup_inverted com.edp.circlebuttongrouped:inverted}</code></td><td></td></tr>
            <tr><td><code>{@link #CircleImgBtnGroup_label com.edp.circlebuttongrouped:label}</code></td><td></td></tr>
            <tr><td><code>{@link #CircleImgBtnGroup_sendBackAtClick com.edp.circlebuttongrouped:sendBackAtClick}</code></td><td></td></tr>
+           <tr><td><code>{@link #CircleImgBtnGroup_timeoutToCollapse com.edp.circlebuttongrouped:timeoutToCollapse}</code></td><td></td></tr>
            </table>
            @see #CircleImgBtnGroup_collapseAtClick
            @see #CircleImgBtnGroup_ibCount
@@ -404,12 +413,13 @@ containing a value of this type.
            @see #CircleImgBtnGroup_inverted
            @see #CircleImgBtnGroup_label
            @see #CircleImgBtnGroup_sendBackAtClick
+           @see #CircleImgBtnGroup_timeoutToCollapse
          */
         public static final int[] CircleImgBtnGroup = {
             0x7f010006, 0x7f010007, 0x7f010008, 0x7f010009,
             0x7f01000a, 0x7f01000b, 0x7f01000c, 0x7f01000d,
             0x7f01000e, 0x7f01000f, 0x7f010010, 0x7f010011,
-            0x7f010012
+            0x7f010012, 0x7f010013
         };
         /**
           <p>This symbol is the offset where the {@link com.edp.circlebuttongrouped.R.attr#collapseAtClick}
@@ -476,7 +486,7 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.edp.circlebuttongrouped:imgSrcCIB1
         */
-        public static final int CircleImgBtnGroup_imgSrcCIB1 = 7;
+        public static final int CircleImgBtnGroup_imgSrcCIB1 = 8;
         /**
           <p>This symbol is the offset where the {@link com.edp.circlebuttongrouped.R.attr#imgSrcCIB2}
           attribute's value can be found in the {@link #CircleImgBtnGroup} array.
@@ -486,7 +496,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.edp.circlebuttongrouped:imgSrcCIB2
         */
-        public static final int CircleImgBtnGroup_imgSrcCIB2 = 8;
+        public static final int CircleImgBtnGroup_imgSrcCIB2 = 9;
         /**
           <p>This symbol is the offset where the {@link com.edp.circlebuttongrouped.R.attr#imgSrcCIB3}
           attribute's value can be found in the {@link #CircleImgBtnGroup} array.
@@ -496,7 +506,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.edp.circlebuttongrouped:imgSrcCIB3
         */
-        public static final int CircleImgBtnGroup_imgSrcCIB3 = 9;
+        public static final int CircleImgBtnGroup_imgSrcCIB3 = 10;
         /**
           <p>This symbol is the offset where the {@link com.edp.circlebuttongrouped.R.attr#imgSrcCIB4}
           attribute's value can be found in the {@link #CircleImgBtnGroup} array.
@@ -506,7 +516,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.edp.circlebuttongrouped:imgSrcCIB4
         */
-        public static final int CircleImgBtnGroup_imgSrcCIB4 = 10;
+        public static final int CircleImgBtnGroup_imgSrcCIB4 = 11;
         /**
           <p>This symbol is the offset where the {@link com.edp.circlebuttongrouped.R.attr#imgSrcCIB5}
           attribute's value can be found in the {@link #CircleImgBtnGroup} array.
@@ -516,7 +526,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.edp.circlebuttongrouped:imgSrcCIB5
         */
-        public static final int CircleImgBtnGroup_imgSrcCIB5 = 11;
+        public static final int CircleImgBtnGroup_imgSrcCIB5 = 12;
         /**
           <p>This symbol is the offset where the {@link com.edp.circlebuttongrouped.R.attr#imgSrcCIB6}
           attribute's value can be found in the {@link #CircleImgBtnGroup} array.
@@ -526,7 +536,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           @attr name com.edp.circlebuttongrouped:imgSrcCIB6
         */
-        public static final int CircleImgBtnGroup_imgSrcCIB6 = 12;
+        public static final int CircleImgBtnGroup_imgSrcCIB6 = 13;
         /**
           <p>This symbol is the offset where the {@link com.edp.circlebuttongrouped.R.attr#inverted}
           attribute's value can be found in the {@link #CircleImgBtnGroup} array.
@@ -569,5 +579,19 @@ containing a value of this type.
           @attr name com.edp.circlebuttongrouped:sendBackAtClick
         */
         public static final int CircleImgBtnGroup_sendBackAtClick = 6;
+        /**
+          <p>This symbol is the offset where the {@link com.edp.circlebuttongrouped.R.attr#timeoutToCollapse}
+          attribute's value can be found in the {@link #CircleImgBtnGroup} array.
+
+
+          <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.edp.circlebuttongrouped:timeoutToCollapse
+        */
+        public static final int CircleImgBtnGroup_timeoutToCollapse = 7;
     };
 }

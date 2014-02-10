@@ -55,21 +55,15 @@ public class MainActivity extends Activity implements OnCircleButtonClickListene
 
 	@Override
 	public void onClick(CircleImgBtn cib, int res) {
-		switch (res) {
-		case R.drawable.cry:
+		if (res == R.drawable.cry) {
 			Toast.makeText(this, "cry", Toast.LENGTH_SHORT).show();
-			break;
-		case R.drawable.open_book:
+		} else if (res == R.drawable.open_book) {
 			Toast.makeText(this, "book", Toast.LENGTH_SHORT).show();
-			break;
-		case R.drawable.close_book:
+		} else if (res == R.drawable.close_book) {
 			Toast.makeText(this, "book", Toast.LENGTH_SHORT).show();
-			break;
-		case R.drawable.ic_launcher:
+		} else if (res == R.drawable.ic_launcher) {
 			Toast.makeText(this, "nothing", Toast.LENGTH_SHORT).show();
-			break;
-		default:
-			break;
+		} else {
 		}
 	}
 

@@ -18,6 +18,7 @@
         <attr name="inverted" format="boolean"></attr>
         <attr name="collapseAtClick" format="boolean"></attr>
         <attr name="sendBackAtClick" format="boolean"></attr>
+        <attr name="timeoutToCollapse" format="integer"></attr>
         <attr name="imgSrcCIB1" format="reference"></attr>
         <attr name="imgSrcCIB2" format="reference"></attr>
         <attr name="imgSrcCIB3" format="reference"></attr>

@@ -3,6 +3,7 @@ package com.edp.circlebuttongrouped;
 import java.util.ArrayList;
 
 import android.graphics.Color;
+import android.os.Handler;
 import android.widget.RelativeLayout;
 
 public class CircleImgBtnUtils {
@@ -16,10 +17,13 @@ public class CircleImgBtnUtils {
 	private CircleImgBtnGroup cibg;
 	private ArrayList<CircleImgBtn> CIBs;
 	private float TopOutAdjust = 0, BottomOutAdjust = 0;
+	private TimeoutRunnable timeoutThread;
+	private int timeoutToCollapse;
 	
-	public CircleImgBtnUtils(CircleImgBtnGroup cibg) {
+	public CircleImgBtnUtils(CircleImgBtnGroup cibg, int timeoutToCollapse) {
 		this.cibg = cibg;
 		CIBs = cibg.CIBs;
+		this.timeoutToCollapse = timeoutToCollapse;
 	}
 
 	public boolean isExpanded() {
@@ -126,9 +130,13 @@ public class CircleImgBtnUtils {
 		if(cibg.getButtomsCount() < 2)
 			return;
 		expanded = true;
+		if(timeoutToCollapse > 0){
+			timeoutThread = new TimeoutRunnable(timeoutToCollapse, cibg, new Handler());
+			timeoutThread.start();
+		}
 		cibg.setBorderColor(EXPANDED_COLOR);
 		TopOutAdjust = BottomOutAdjust = 0;
-		//instancias de bot�es
+		//instancias de botoes
 		final CircleImgBtn cib1 = CIBs.get(1);
 		final CircleImgBtn cib2 = (cibg.getButtomsCount() > 2) ? CIBs.get(2) : null;
 		final CircleImgBtn cib3 = (cibg.getButtomsCount() > 3) ? CIBs.get(3) : null;
@@ -228,6 +236,8 @@ public class CircleImgBtnUtils {
 		if(cibg.getButtomsCount() < 2)
 			return;
 		expanded = false;
+		if(timeoutThread != null)
+			timeoutThread.stopTimeout();
 		cibg.resetBorderColor();
 		//instancias de botoes
 		final CircleImgBtn cib1 = CIBs.get(1);

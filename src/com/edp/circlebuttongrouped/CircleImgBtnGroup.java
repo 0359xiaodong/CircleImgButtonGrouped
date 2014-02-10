@@ -19,7 +19,7 @@ public class CircleImgBtnGroup extends CircleImgBtn
 		implements OnClickListener, OnLongClickListener, OnFocusChangeListener{
 
 	private RelativeLayout rl;
-	private int height, width, count;
+	private int height, width, count, timeoutToCollapse;
 	private TypedArray attribs;
 	private boolean collapseAtClick, sendBackAtClick, inverted;
 	private CircleImgBtnUtils cibUtils;
@@ -31,10 +31,11 @@ public class CircleImgBtnGroup extends CircleImgBtn
 	@SuppressLint("Recycle")
 	public CircleImgBtnGroup(Context context, AttributeSet attrs) {
 		super(context, attrs);
-		cibUtils = new CircleImgBtnUtils(this);
 		attribs = context.obtainStyledAttributes(attrs, R.styleable.CircleImgBtnGroup);
 		collapseAtClick = attribs.getBoolean(R.styleable.CircleImgBtnGroup_collapseAtClick, true);
 		sendBackAtClick = attribs.getBoolean(R.styleable.CircleImgBtnGroup_sendBackAtClick, true);
+		timeoutToCollapse = attribs.getInteger(R.styleable.CircleImgBtnGroup_timeoutToCollapse, 5);
+		cibUtils = new CircleImgBtnUtils(this, timeoutToCollapse);
 		configMainImgBtn();
 		setHeight(attribs.getInt(R.styleable.CircleImgBtnGroup_ibHeight, 30));
 		setWidth(attribs.getInt(R.styleable.CircleImgBtnGroup_ibWidth, 30));
@@ -79,6 +80,10 @@ public class CircleImgBtnGroup extends CircleImgBtn
 			return CIBs.get(i);
 		else 
 			return null;
+	}
+	
+	public CircleImgBtn getFrontButton(){
+		return CIBs.get(0);
 	}
 	
 	public void setHeight(int height) {
@@ -239,13 +244,13 @@ public class CircleImgBtnGroup extends CircleImgBtn
 	public void expand(){
 		if(!cibUtils.isExpanded()){
 			cibUtils.expand(inverted);
-			this.requestFocus();
 		}
 	}
 	
 	public void collapse(){
-		if(cibUtils.isExpanded())
+		if(cibUtils.isExpanded()){
 			cibUtils.collapse(inverted);
+		}
 	}
 	
 	public void addRLayoutWithOtherGroups(RelativeLayout rl){
