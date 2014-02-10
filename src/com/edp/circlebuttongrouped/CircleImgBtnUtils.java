@@ -28,7 +28,7 @@ public class CircleImgBtnUtils {
 
 	/**
 	 * @param cib
-	 * @return true se o botão informado esta fora da tela saindo por cima
+	 * @return true se o botao informado esta fora da tela saindo por cima
 	 */
 	public boolean isCIBOutsideTop(CircleImgBtn cib) {
 		final float yPos = cib.getTop() + cib.getTranslationY();
@@ -39,7 +39,7 @@ public class CircleImgBtnUtils {
 
 	/**
 	 * @param cib
-	 * @return true se o botão informado esta fora da tela saindo por baixo
+	 * @return true se o botao informado esta fora da tela saindo por baixo
 	 */
 	public boolean isCIBOutsideBottom(CircleImgBtn cib) {
 		final RelativeLayout parent = (RelativeLayout) cibg.getParent();
@@ -52,7 +52,7 @@ public class CircleImgBtnUtils {
 	/**
 	 * @param cib
 	 * @param futureYPos
-	 * @return true se o botão informado estará fora da tela por cima
+	 * @return true se o botao informado estara fora da tela por cima
 	 */
 	public boolean willBeCIBOutsideTop(CircleImgBtn cib, float futureYPos) {
 		futureYPos += cib.getTop() + cib.getTranslationY();
@@ -64,7 +64,7 @@ public class CircleImgBtnUtils {
 	/**
 	 * @param cib
 	 * @param futureYPos
-	 * @return true se o botão informado estará fora da tela por baixo
+	 * @return true se o botao informado estara fora da tela por baixo
 	 */
 	public boolean willBeCIBOutsideBottom(CircleImgBtn cib, float futureYPos) {
 		final RelativeLayout parent = (RelativeLayout) cibg.getParent();
@@ -120,7 +120,7 @@ public class CircleImgBtnUtils {
 	}
 
 	/**
-	 * desagrupa os botões mostrando os que estão por trás
+	 * desagrupa os botoes mostrando os que estao por tras
 	 */
 	void expand(boolean inverted) {
 		if(cibg.getButtomsCount() < 2)
@@ -128,7 +128,7 @@ public class CircleImgBtnUtils {
 		expanded = true;
 		cibg.setBorderColor(EXPANDED_COLOR);
 		TopOutAdjust = BottomOutAdjust = 0;
-		//instancias de botões
+		//instancias de botï¿½es
 		final CircleImgBtn cib1 = CIBs.get(1);
 		final CircleImgBtn cib2 = (cibg.getButtomsCount() > 2) ? CIBs.get(2) : null;
 		final CircleImgBtn cib3 = (cibg.getButtomsCount() > 3) ? CIBs.get(3) : null;
@@ -136,7 +136,7 @@ public class CircleImgBtnUtils {
 		final CircleImgBtn cib5 = (cibg.getButtomsCount() > 5) ? CIBs.get(5) : null;
 		final int cibWidth = cibg.getViewWidth();
 		final int cibHeight = cibg.getViewHeight();
-		//posicao inicial dos botões
+		//posicao inicial dos botoes
 		int inv = (inverted)?-1:1;
 		float cib1_x = cib1.getTranslationX(), cib2_x = 0, cib3_x = 0, cib4_x = 0, cib5_x = 0;
 		if (cibg.getButtomsCount() > 2)
@@ -147,7 +147,7 @@ public class CircleImgBtnUtils {
 			cib4_x = cib4.getTranslationX() - 3*HORIZONTAL_BTN_DISTANCE;
 		if (cibg.getButtomsCount() > 5)
 			cib5_x = cib5.getTranslationX() - 4*HORIZONTAL_BTN_DISTANCE;
-		//posição final dos botões e ajustes se algum saiu da tela
+		//posicao final dos botoes e ajustes se algum saiu da tela
 		float cib1_y_End = 0, cib2_y_End = 0, cib3_y_End = 0, cib4_y_End = 0, cib5_y_End = 0;
 		switch (cibg.getButtomsCount()) {
 			case 2:
@@ -222,14 +222,14 @@ public class CircleImgBtnUtils {
 	}
 
 	/**
-	 * Agrupa os botões mostrando apenas o que esta na frente
+	 * Agrupa os botoes mostrando apenas o que esta na frente
 	 */
 	void collapse(boolean inverted) {
 		if(cibg.getButtomsCount() < 2)
 			return;
 		expanded = false;
 		cibg.resetBorderColor();
-		//instancias de botões
+		//instancias de botoes
 		final CircleImgBtn cib1 = CIBs.get(1);
 		final CircleImgBtn cib2 = (cibg.getButtomsCount() > 2) ? CIBs.get(2) : null;
 		final CircleImgBtn cib3 = (cibg.getButtomsCount() > 3) ? CIBs.get(3) : null;
@@ -237,7 +237,7 @@ public class CircleImgBtnUtils {
 		final CircleImgBtn cib5 = (cibg.getButtomsCount() > 5) ? CIBs.get(5) : null;
 		final int cibWidth = cibg.getViewWidth();
 		final int cibHeight = cibg.getViewHeight();
-		//posicao inicial dos botões
+		//posicao inicial dos botoes
 		int inv = (inverted)?-1:1;
 		float cib1_x = inv*(cib1.getTranslationX()), cib2_x = 0, cib3_x = 0, cib4_x = 0, cib5_x = 0;
 		if (cibg.getButtomsCount() > 2)
@@ -248,7 +248,7 @@ public class CircleImgBtnUtils {
 			cib4_x = inv*cib4.getTranslationX() + 3*HORIZONTAL_BTN_DISTANCE;
 		if (cibg.getButtomsCount() > 5)
 			cib5_x = inv*cib5.getTranslationX() + 4*HORIZONTAL_BTN_DISTANCE;
-		//posição final dos botões e ajustes se algum saiu da tela
+		//posicao final dos botoes e ajustes se algum saiu da tela
 		float cib1_y_End = 0, cib2_y_End = 0, cib3_y_End = 0, cib4_y_End = 0, cib5_y_End = 0;
 		switch (cibg.getButtomsCount()) {
 			case 2:

@@ -8,13 +8,15 @@ import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.View.OnFocusChangeListener;
 import android.view.View.OnLongClickListener;
 import android.widget.RelativeLayout;
 import android.widget.RelativeLayout.LayoutParams;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class CircleImgBtnGroup extends CircleImgBtn implements OnClickListener, OnLongClickListener{
+public class CircleImgBtnGroup extends CircleImgBtn 
+		implements OnClickListener, OnLongClickListener, OnFocusChangeListener{
 
 	private RelativeLayout rl;
 	private int height, width, count;
@@ -42,7 +44,7 @@ public class CircleImgBtnGroup extends CircleImgBtn implements OnClickListener, 
 	}
 
 	/**
-	 * Configura o bot�o da frente que � este componente
+	 * Configura o botao da frente que representa este componente
 	 */
 	private void configMainImgBtn() {
 		final int imgID = getImgCIVs(0);
@@ -97,7 +99,7 @@ public class CircleImgBtnGroup extends CircleImgBtn implements OnClickListener, 
 		lbGroupLabel.setText(label);
 	}
 	/**
-	 * configura a qtd de bot�es e os instancia
+	 * configura a qtd de botoes e os instancia
 	 * @param count
 	 */
 	public void setButtomsCount(int count) {
@@ -120,13 +122,14 @@ public class CircleImgBtnGroup extends CircleImgBtn implements OnClickListener, 
 	}
 
 	/**
-	 * Posiciona os bot�es no relativelayout informado 
-	 * @param rl - RelativeLayout o qual ser� pai dos bot�es agrupados
+	 * Posiciona os botoes no relativelayout informado 
+	 * @param rl - RelativeLayout o qual serao pai dos botoes agrupados
 	 */
 	public CircleImgBtnGroup configGroup(OnCircleButtonClickListener cl, RelativeLayout rl){
 		if(this.rl != null)
 			return this;
 		this.rl = rl;
+		configCollapseAfterOutsiteClick(rl);
 		onClickListener = cl;
 		RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(
 				LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
@@ -156,11 +159,24 @@ public class CircleImgBtnGroup extends CircleImgBtn implements OnClickListener, 
 		return this;
 	}
 
+	/**
+	 * Configure focus listener to be possible collapse after click outside buttom
+	 * @param rl
+	 */
+	private void configCollapseAfterOutsiteClick(RelativeLayout rl) {
+		rl.setClickable(true);
+		rl.setFocusable(true);
+		rl.setFocusableInTouchMode(true);
+		this.setFocusable(true);
+		this.setFocusableInTouchMode(true);
+		this.setOnFocusChangeListener(this);
+	}
+
 	void showInfo(View v) {
 		int num = CIBs.indexOf(v);
 		float top = CIBs.get(num).getTop() + CIBs.get(num).getTranslationY();
 		float left = CIBs.get(num).getLeft() + CIBs.get(num).getTranslationX();
-		String msg = "Clicou no bot�o " + num
+		String msg = "Clicou no botao " + num
 				+ ". x,y: " + left + "," + top;
 		Toast.makeText(getContext(), msg, Toast.LENGTH_LONG).show();
 	}
@@ -174,8 +190,6 @@ public class CircleImgBtnGroup extends CircleImgBtn implements OnClickListener, 
 			if(onClickListener != null){
 				onClickListener.onClick(cib, cib.getImageResource());
 			}
-//			if(sendBackAtClick)
-//				bringCIBToFront(cib.getImageResource());
 			if(collapseAtClick){
 				cibUtils.collapse(inverted);
 			}
@@ -223,8 +237,10 @@ public class CircleImgBtnGroup extends CircleImgBtn implements OnClickListener, 
 	}
 
 	public void expand(){
-		if(!cibUtils.isExpanded())
+		if(!cibUtils.isExpanded()){
 			cibUtils.expand(inverted);
+			this.requestFocus();
+		}
 	}
 	
 	public void collapse(){
@@ -250,6 +266,13 @@ public class CircleImgBtnGroup extends CircleImgBtn implements OnClickListener, 
 					CircleImgBtnGroup cibg = (CircleImgBtnGroup)oRl.getChildAt(i);
 					cibg.collapse();
 				}
+	}
+
+	@Override
+	public void onFocusChange(View v, boolean hasFocus) {
+		if(!hasFocus){
+			collapse();
+		}
 	}
 
 }

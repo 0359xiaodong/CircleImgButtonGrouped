@@ -15,7 +15,7 @@ import android.widget.ImageView;
 
 /**
  * @author ESS
- * Extensão de ImageView que desenha imagem redonda
+ * Extensao de ImageView que desenha imagem redonda
  */
 public class CircleImgBtn extends ImageView{
 	
