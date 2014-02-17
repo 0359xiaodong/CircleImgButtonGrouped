@@ -4,9 +4,13 @@ import java.util.ArrayList;
 
 import android.graphics.Color;
 import android.os.Handler;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.RelativeLayout.LayoutParams;
 
-public class CircleImgBtnUtils {
+public class CircleImgBtnUtils implements OnClickListener{
 
 	public static final int EXPAND_DISTANCE = 25;
 	public static final int VERTICAL_BTN_DISTANCE = 5;
@@ -19,11 +23,17 @@ public class CircleImgBtnUtils {
 	private float TopOutAdjust = 0, BottomOutAdjust = 0;
 	private TimeoutRunnable timeoutThread;
 	private int timeoutToCollapse;
+	private RelativeLayout rl;
+	private ImageView ivOverlay;
 	
 	public CircleImgBtnUtils(CircleImgBtnGroup cibg, int timeoutToCollapse) {
 		this.cibg = cibg;
 		CIBs = cibg.CIBs;
 		this.timeoutToCollapse = timeoutToCollapse;
+	}
+
+	public void setRl(RelativeLayout rl) {
+		this.rl = rl;
 	}
 
 	public boolean isExpanded() {
@@ -130,6 +140,7 @@ public class CircleImgBtnUtils {
 		if(cibg.getButtomsCount() < 2)
 			return;
 		expanded = true;
+		showOverlay(true);
 		if(timeoutToCollapse > 0){
 			timeoutThread = new TimeoutRunnable(timeoutToCollapse, cibg, new Handler());
 			timeoutThread.start();
@@ -236,6 +247,7 @@ public class CircleImgBtnUtils {
 		if(cibg.getButtomsCount() < 2)
 			return;
 		expanded = false;
+		showOverlay(false);
 		if(timeoutThread != null)
 			timeoutThread.stopTimeout();
 		cibg.resetBorderColor();
@@ -361,4 +373,42 @@ public class CircleImgBtnUtils {
 		}
 	}
 
+	public ImageView createOverlay() {
+		RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(
+				LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
+		params.addRule(RelativeLayout.ALIGN_PARENT_LEFT, RelativeLayout.TRUE);
+		params.addRule(RelativeLayout.ALIGN_PARENT_TOP, RelativeLayout.TRUE);
+		ImageView ivOverlay = new ImageView(rl.getContext());
+		ivOverlay.setLayoutParams(params);
+		ivOverlay.setOnClickListener(this);
+//		ivOverlay.setBackgroundColor(Color.BLUE);
+		return ivOverlay;
+	}
+
+	public void showOverlay(boolean show){
+		if(ivOverlay == null)
+			ivOverlay = createOverlay();
+		if(show){
+			rl.addView(ivOverlay);
+			reDrawCIBs();
+		}else
+			rl.removeView(ivOverlay);
+	}
+
+	private void reDrawCIBs() {
+		rl.removeView(cibg);
+		for (int i=CIBs.size()-1; i>0; i--) {
+			CircleImgBtn cib = CIBs.get(i);
+			rl.removeView(cib);
+		}
+		cibg.drawCIBs(rl);
+		rl.addView(cibg);
+	}
+
+	@Override
+	public void onClick(View v) {
+		if(v == ivOverlay)
+			cibg.collapse();
+	}
+	
 }

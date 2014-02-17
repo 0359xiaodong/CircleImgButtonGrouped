@@ -8,7 +8,6 @@ import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.View.OnFocusChangeListener;
 import android.view.View.OnLongClickListener;
 import android.widget.RelativeLayout;
 import android.widget.RelativeLayout.LayoutParams;
@@ -16,7 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class CircleImgBtnGroup extends CircleImgBtn 
-		implements OnClickListener, OnLongClickListener, OnFocusChangeListener{
+		implements OnClickListener, OnLongClickListener{
 
 	private RelativeLayout rl;
 	private int height, width, count, timeoutToCollapse;
@@ -136,8 +135,8 @@ public class CircleImgBtnGroup extends CircleImgBtn
 		if(this.rl != null)
 			return this;
 		this.rl = rl;
+		cibUtils.setRl(rl);
 		configCollapseAfterOutsiteClick(rl);
-		this.setOnFocusChangeListener(this);
 		onClickListener = cl;
 		RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(
 				LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
@@ -149,6 +148,13 @@ public class CircleImgBtnGroup extends CircleImgBtn
 		lbGroupLabel.setLayoutParams(params);
 		rl.addView(lbGroupLabel);
 		//coloca iniciando do ultimo para q o primeiro fique no topo e no canto esquerdo
+		drawCIBs(rl);
+		bringToFront();
+		return this;
+	}
+
+	void drawCIBs(RelativeLayout rl) {
+		RelativeLayout.LayoutParams params;
 		for (int i=CIBs.size()-1; i>0; i--) {
 			CircleImgBtn cib = CIBs.get(i);
 			params = cibUtils.getRelativeLayoutParamsCopy(
@@ -163,8 +169,6 @@ public class CircleImgBtnGroup extends CircleImgBtn
 			cib.setLayoutParams(params);
 			rl.addView(cib);
 		}
-		bringToFront();
-		return this;
 	}
 
 	/**
@@ -172,7 +176,6 @@ public class CircleImgBtnGroup extends CircleImgBtn
 	 * @param rl
 	 */
 	private void configCollapseAfterOutsiteClick(RelativeLayout rl) {
-//		rl.setClickable(true);
 		rl.setFocusable(true);
 		rl.setFocusableInTouchMode(true);
 		this.setFocusable(true);
@@ -273,13 +276,6 @@ public class CircleImgBtnGroup extends CircleImgBtn
 					CircleImgBtnGroup cibg = (CircleImgBtnGroup)oRl.getChildAt(i);
 					cibg.collapse();
 				}
-	}
-
-	@Override
-	public void onFocusChange(View v, boolean hasFocus) {
-		if(!hasFocus){
-			collapse();
-		}
 	}
 
 }
