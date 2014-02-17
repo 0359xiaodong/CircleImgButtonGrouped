@@ -37,8 +37,10 @@ public class CircleImgBtnGroup extends CircleImgBtn
 		timeoutToCollapse = attribs.getInteger(R.styleable.CircleImgBtnGroup_timeoutToCollapse, 5);
 		cibUtils = new CircleImgBtnUtils(this, timeoutToCollapse);
 		configMainImgBtn();
-		setHeight(attribs.getInt(R.styleable.CircleImgBtnGroup_ibHeight, 30));
-		setWidth(attribs.getInt(R.styleable.CircleImgBtnGroup_ibWidth, 30));
+		float dimHeight = attribs.getDimension(R.styleable.CircleImgBtnGroup_ibHeight, 30f);
+		float dimWidth = attribs.getDimension(R.styleable.CircleImgBtnGroup_ibWidth, 30f);
+		setHeight(Math.round(dimHeight));
+		setWidth(Math.round(dimWidth));
 		setButtomsCount(attribs.getInt(R.styleable.CircleImgBtnGroup_ibCount, 3));
 		setGroupLabel(attribs.getString(R.styleable.CircleImgBtnGroup_label));
 		inverted = attribs.getBoolean(R.styleable.CircleImgBtnGroup_inverted, false);
@@ -135,6 +137,7 @@ public class CircleImgBtnGroup extends CircleImgBtn
 			return this;
 		this.rl = rl;
 		configCollapseAfterOutsiteClick(rl);
+		this.setOnFocusChangeListener(this);
 		onClickListener = cl;
 		RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(
 				LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
@@ -169,12 +172,11 @@ public class CircleImgBtnGroup extends CircleImgBtn
 	 * @param rl
 	 */
 	private void configCollapseAfterOutsiteClick(RelativeLayout rl) {
-		rl.setClickable(true);
+//		rl.setClickable(true);
 		rl.setFocusable(true);
 		rl.setFocusableInTouchMode(true);
 		this.setFocusable(true);
 		this.setFocusableInTouchMode(true);
-		this.setOnFocusChangeListener(this);
 	}
 
 	void showInfo(View v) {

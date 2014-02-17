@@ -1,7 +1,6 @@
 package com.edp.circlebuttongrouped;
 
 import android.os.Handler;
-import android.util.Log;
 
 public class TimeoutRunnable extends Thread {
 
@@ -32,13 +31,11 @@ public class TimeoutRunnable extends Thread {
 			}else{
 				return;	
 			}
-			Log.i("Time", String.valueOf(count));
 		}
 		handler.post(new Runnable() {
 			@Override
 			public void run() {
 				cibg.collapse();
-				Log.i("Time", "Rodou");
 			}
 		});
 	}
