@@ -381,7 +381,7 @@ public class CircleImgBtnUtils implements OnClickListener{
 		ImageView ivOverlay = new ImageView(rl.getContext());
 		ivOverlay.setLayoutParams(params);
 		ivOverlay.setOnClickListener(this);
-//		ivOverlay.setBackgroundColor(Color.BLUE);
+		ivOverlay.setBackgroundColor(Color.TRANSPARENT);
 		return ivOverlay;
 	}
 

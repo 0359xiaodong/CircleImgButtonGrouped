@@ -16,7 +16,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int border=0x7f010002;
+        public static int border=0x7f010002;
         /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
 <p>This may also be a reference to a resource (in the form
@@ -25,7 +25,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int border_color=0x7f010004;
+        public static int border_color=0x7f010004;
         /** <p>Must be an integer value, such as "<code>100</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -33,7 +33,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int border_width=0x7f010003;
+        public static int border_width=0x7f010003;
         /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -41,7 +41,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int collapseAtClick=0x7f01000b;
+        public static int collapseAtClick=0x7f01000b;
         /** <p>Must be an integer value, such as "<code>100</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -49,7 +49,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int height=0x7f010000;
+        public static int height=0x7f010000;
         /** <p>Must be an integer value, such as "<code>100</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -57,7 +57,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int ibCount=0x7f010008;
+        public static int ibCount=0x7f010008;
         /** <p>Must be an integer value, such as "<code>100</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -65,7 +65,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int ibHeight=0x7f010006;
+        public static int ibHeight=0x7f010006;
         /** <p>Must be an integer value, such as "<code>100</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -73,31 +73,31 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int ibWidth=0x7f010007;
+        public static int ibWidth=0x7f010007;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static final int imgSrcCIB1=0x7f01000e;
+        public static int imgSrcCIB1=0x7f01000e;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static final int imgSrcCIB2=0x7f01000f;
+        public static int imgSrcCIB2=0x7f01000f;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static final int imgSrcCIB3=0x7f010010;
+        public static int imgSrcCIB3=0x7f010010;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static final int imgSrcCIB4=0x7f010011;
+        public static int imgSrcCIB4=0x7f010011;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static final int imgSrcCIB5=0x7f010012;
+        public static int imgSrcCIB5=0x7f010012;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static final int imgSrcCIB6=0x7f010013;
+        public static int imgSrcCIB6=0x7f010013;
         /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -105,7 +105,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int inverted=0x7f01000a;
+        public static int inverted=0x7f01000a;
         /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -113,7 +113,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int label=0x7f010009;
+        public static int label=0x7f010009;
         /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -121,7 +121,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int sendBackAtClick=0x7f01000c;
+        public static int sendBackAtClick=0x7f01000c;
         /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -129,7 +129,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int shadow=0x7f010005;
+        public static int shadow=0x7f010005;
         /** <p>Must be an integer value, such as "<code>100</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -137,7 +137,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int timeoutToCollapse=0x7f01000d;
+        public static int timeoutToCollapse=0x7f01000d;
         /** <p>Must be an integer value, such as "<code>100</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -145,19 +145,19 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int width=0x7f010001;
+        public static int width=0x7f010001;
     }
     public static final class color {
         /**  Card Color 
          */
-        public static final int card_background=0x7f040000;
-        public static final int card_backgroundExpand=0x7f040002;
-        public static final int card_background_header=0x7f040001;
-        public static final int card_expand_title_color=0x7f040004;
+        public static int card_background=0x7f040000;
+        public static int card_backgroundExpand=0x7f040002;
+        public static int card_background_header=0x7f040001;
+        public static int card_expand_title_color=0x7f040004;
         /**  Used by selector 
          */
-        public static final int card_pressed=0x7f040005;
-        public static final int card_text_color_header=0x7f040003;
+        public static int card_pressed=0x7f040005;
+        public static int card_text_color_header=0x7f040003;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -166,81 +166,81 @@ containing a value of this type.
          screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
     
          */
-        public static final int activity_horizontal_margin=0x7f050000;
-        public static final int activity_vertical_margin=0x7f050001;
-        public static final int btSize=0x7f050002;
+        public static int activity_horizontal_margin=0x7f050000;
+        public static int activity_vertical_margin=0x7f050001;
+        public static int btSize=0x7f050002;
     }
     public static final class drawable {
-        public static final int afternoon=0x7f020000;
-        public static final int attention=0x7f020001;
-        public static final int be_careful=0x7f020002;
-        public static final int bye=0x7f020003;
-        public static final int call_volunteer=0x7f020004;
-        public static final int card_background=0x7f020005;
-        public static final int card_selector=0x7f020006;
-        public static final int close_activity=0x7f020007;
-        public static final int close_book=0x7f020008;
-        public static final int come_here=0x7f020009;
-        public static final int copy_it=0x7f02000a;
-        public static final int cry=0x7f02000b;
-        public static final int doit=0x7f02000c;
-        public static final int dont_doit=0x7f02000d;
-        public static final int end_activity=0x7f02000e;
-        public static final int evening=0x7f02000f;
-        public static final int excellent=0x7f020010;
-        public static final int excuse_me=0x7f020011;
-        public static final int go_home=0x7f020012;
-        public static final int good_job=0x7f020013;
-        public static final int ic_launcher=0x7f020014;
-        public static final int listen=0x7f020015;
-        public static final int morning=0x7f020016;
-        public static final int night=0x7f020017;
-        public static final int no_problem=0x7f020018;
-        public static final int open_book=0x7f020019;
-        public static final int please=0x7f02001a;
-        public static final int pressed_background_card=0x7f02001b;
-        public static final int repeat=0x7f02001c;
-        public static final int silence=0x7f02001d;
-        public static final int sorry=0x7f02001e;
-        public static final int start_activity=0x7f02001f;
-        public static final int thank_you=0x7f020020;
-        public static final int youre_welcome=0x7f020021;
+        public static int afternoon=0x7f020000;
+        public static int attention=0x7f020001;
+        public static int be_careful=0x7f020002;
+        public static int bye=0x7f020003;
+        public static int call_volunteer=0x7f020004;
+        public static int card_background=0x7f020005;
+        public static int card_selector=0x7f020006;
+        public static int close_activity=0x7f020007;
+        public static int close_book=0x7f020008;
+        public static int come_here=0x7f020009;
+        public static int copy_it=0x7f02000a;
+        public static int cry=0x7f02000b;
+        public static int doit=0x7f02000c;
+        public static int dont_doit=0x7f02000d;
+        public static int end_activity=0x7f02000e;
+        public static int evening=0x7f02000f;
+        public static int excellent=0x7f020010;
+        public static int excuse_me=0x7f020011;
+        public static int go_home=0x7f020012;
+        public static int good_job=0x7f020013;
+        public static int ic_launcher=0x7f020014;
+        public static int listen=0x7f020015;
+        public static int morning=0x7f020016;
+        public static int night=0x7f020017;
+        public static int no_problem=0x7f020018;
+        public static int open_book=0x7f020019;
+        public static int please=0x7f02001a;
+        public static int pressed_background_card=0x7f02001b;
+        public static int repeat=0x7f02001c;
+        public static int silence=0x7f02001d;
+        public static int sorry=0x7f02001e;
+        public static int start_activity=0x7f02001f;
+        public static int thank_you=0x7f020020;
+        public static int youre_welcome=0x7f020021;
     }
     public static final class id {
-        public static final int action_settings=0x7f090016;
-        public static final int cib4=0x7f090011;
-        public static final int cib5_1=0x7f09000b;
-        public static final int cib5_2=0x7f09000f;
-        public static final int cib5_3=0x7f09000e;
-        public static final int cib6_1=0x7f09000a;
-        public static final int cib6_2=0x7f09000d;
-        public static final int cib6_3=0x7f09000c;
-        public static final int cibBottom3=0x7f090008;
-        public static final int cibBottom4=0x7f090007;
-        public static final int cibBottom5=0x7f090006;
-        public static final int cibBottom6=0x7f090009;
-        public static final int cibR1=0x7f090012;
-        public static final int cibR2=0x7f090014;
-        public static final int cibR3=0x7f090010;
-        public static final int cibR4=0x7f090015;
-        public static final int cibR5=0x7f090013;
-        public static final int cibTop3=0x7f090002;
-        public static final int cibTop4=0x7f090004;
-        public static final int cibTop5=0x7f090003;
-        public static final int cibTop6=0x7f090005;
-        public static final int rlLeft=0x7f090001;
-        public static final int rlRoot=0x7f090000;
+        public static int action_settings=0x7f090016;
+        public static int cib4=0x7f090011;
+        public static int cib5_1=0x7f09000b;
+        public static int cib5_2=0x7f09000f;
+        public static int cib5_3=0x7f09000e;
+        public static int cib6_1=0x7f09000a;
+        public static int cib6_2=0x7f09000d;
+        public static int cib6_3=0x7f09000c;
+        public static int cibBottom3=0x7f090008;
+        public static int cibBottom4=0x7f090007;
+        public static int cibBottom5=0x7f090006;
+        public static int cibBottom6=0x7f090009;
+        public static int cibR1=0x7f090012;
+        public static int cibR2=0x7f090014;
+        public static int cibR3=0x7f090010;
+        public static int cibR4=0x7f090015;
+        public static int cibR5=0x7f090013;
+        public static int cibTop3=0x7f090002;
+        public static int cibTop4=0x7f090004;
+        public static int cibTop5=0x7f090003;
+        public static int cibTop6=0x7f090005;
+        public static int rlLeft=0x7f090001;
+        public static int rlRoot=0x7f090000;
     }
     public static final class layout {
-        public static final int cibg_main=0x7f030000;
+        public static int cibg_main=0x7f030000;
     }
     public static final class menu {
-        public static final int main=0x7f080000;
+        public static int main=0x7f080000;
     }
     public static final class string {
-        public static final int action_settings=0x7f060001;
-        public static final int app_name=0x7f060000;
-        public static final int hello_world=0x7f060002;
+        public static int action_settings=0x7f060001;
+        public static int app_name=0x7f060000;
+        public static int hello_world=0x7f060002;
     }
     public static final class style {
         /** 
@@ -264,11 +264,11 @@ containing a value of this type.
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f070000;
+        public static int AppBaseTheme=0x7f070000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f070001;
+        public static int AppTheme=0x7f070001;
     }
     public static final class styleable {
         /** Attributes that can be used with a CircleImgBtn.

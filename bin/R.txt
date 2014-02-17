@@ -26,6 +26,7 @@ int color card_pressed 0x7f040005
 int color card_text_color_header 0x7f040003
 int dimen activity_horizontal_margin 0x7f050000
 int dimen activity_vertical_margin 0x7f050001
+int dimen btSize 0x7f050002
 int drawable afternoon 0x7f020000
 int drawable attention 0x7f020001
 int drawable be_careful 0x7f020002
