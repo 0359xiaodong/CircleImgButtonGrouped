@@ -3,11 +3,11 @@ package com.edp.circlebuttongrouped;
 public interface OnCircleButtonClickListener {
 
 	/**
-	 * Evento de clique simples em um botao circular 
+	 * Evento de clique simples em um CIB (Circular Image button)
 	 * @param cib = view do botao circular
 	 * @param res = image resource do botao circular
 	 */
-	public void onClick(CircleImgBtn cib, int res);
+	public void onCIBClick(CircleImgBtn cib, int res);
 
 	/**
 	 * Evento de clique no grupo

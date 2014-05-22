@@ -198,7 +198,7 @@ public class CircleImgBtnGroup extends CircleImgBtn
 		//Comprima se expandido
 		if(cibUtils.isExpanded()){
 			if(onClickListener != null){
-				onClickListener.onClick(cib, cib.getImageResource());
+				onClickListener.onCIBClick(cib, cib.getImageResource());
 			}
 			if(collapseAtClick){
 				cibUtils.collapse(inverted);

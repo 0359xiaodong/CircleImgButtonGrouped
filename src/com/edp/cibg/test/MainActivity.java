@@ -54,7 +54,7 @@ public class MainActivity extends Activity implements OnCircleButtonClickListene
 	}
 
 	@Override
-	public void onClick(CircleImgBtn cib, int res) {
+	public void onCIBClick(CircleImgBtn cib, int res) {
 		if (res == R.drawable.cry) {
 			Toast.makeText(this, "cry", Toast.LENGTH_SHORT).show();
 		} else if (res == R.drawable.open_book) {
