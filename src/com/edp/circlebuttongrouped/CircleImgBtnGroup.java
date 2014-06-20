@@ -2,10 +2,13 @@ package com.edp.circlebuttongrouped;
 
 import java.util.ArrayList;
 
+import javax.crypto.spec.IvParameterSpec;
+
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
+import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnLongClickListener;
@@ -140,11 +143,13 @@ public class CircleImgBtnGroup extends CircleImgBtn
 		onClickListener = cl;
 		RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(
 				LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
-		params.addRule(RelativeLayout.ALIGN_LEFT, this.getId());
+		params.addRule(inverted ? RelativeLayout.ALIGN_RIGHT : RelativeLayout.ALIGN_LEFT, this.getId());
 		params.addRule(RelativeLayout.ALIGN_BOTTOM, this.getId());
-		final float lbGroupWidth = lbGroupLabel.getPaint().measureText(lbGroupLabel.getText().toString());
-		int leftMargin = getViewWidth()/2 - (int)lbGroupWidth/3;
-		params.setMargins(leftMargin, 0, 0, -15);
+//		final float lbGroupWidth = lbGroupLabel.getPaint().measureText(lbGroupLabel.getText().toString());
+//		int leftMargin = getViewWidth()/2 - (int)lbGroupWidth/3;
+		int leftMargin = (inverted) ? 0 : 5;
+		int rightMargin = (inverted) ? 5 : 0;
+		params.setMargins(leftMargin, rightMargin, rightMargin, -15);
 		lbGroupLabel.setLayoutParams(params);
 		rl.addView(lbGroupLabel);
 		//coloca iniciando do ultimo para q o primeiro fique no topo e no canto esquerdo
