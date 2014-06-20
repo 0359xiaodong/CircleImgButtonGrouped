@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import android.graphics.Color;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
@@ -83,6 +84,7 @@ public class CircleImgBtnUtils implements OnClickListener{
 	public boolean willBeCIBOutsideBottom(CircleImgBtn cib, float futureYPos) {
 		final RelativeLayout parent = (RelativeLayout) cibg.getParent();
 		futureYPos += cib.getTop() + cib.getTranslationY();
+		Log.i("out", futureYPos + " " + parent.getHeight());
 		if(futureYPos + cibg.getViewHeight() > parent.getHeight())
 			return true;
 		return false;
@@ -206,7 +208,7 @@ public class CircleImgBtnUtils implements OnClickListener{
 				TopOutAdjust = willBeCIBOutsideTop(cib1, cib1_y_End) ? 
 						willBeCIBOutsideTop(cib2, cib2_y_End) ? -cib1_y_End : -cib2_y_End : 0;
 				BottomOutAdjust = willBeCIBOutsideBottom(cib4, cib4_y_End) ? 
-						willBeCIBOutsideBottom(cib3, cib3_y_End) ? -cib4_y_End : -cib3_y_End : 0;
+						willBeCIBOutsideBottom(cib3, cib3_y_End) ? -cib4_y_End : -cib4_y_End : 0;
 				cib1.animate().translationX(inv*(cib1_x + cibWidth + EXPAND_DISTANCE)).
 					translationY(cib1_y_End + TopOutAdjust + BottomOutAdjust);
 				cib2.animate().translationX(inv*(cib2_x + cibWidth + EXPAND_DISTANCE)).
