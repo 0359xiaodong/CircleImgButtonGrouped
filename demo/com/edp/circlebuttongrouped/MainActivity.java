@@ -36,7 +36,7 @@ public class MainActivity extends Activity implements OnCircleButtonClickListene
 		((CircleImgBtnGroup) findViewById(R.id.cibBottom4)).configGroup(this, rlLeft);
 		((CircleImgBtnGroup) findViewById(R.id.cibBottom5)).configGroup(this, rlLeft);
 		((CircleImgBtnGroup) findViewById(R.id.cibBottom6)).configGroup(this, rlLeft);
-		((CircleImgBtnGroup) findViewById(R.id.cibR3)).configGroup(this, rlLeft);
+		((CircleImgBtnGroup) findViewById(R.id.cib3)).configGroup(this, rlLeft);
 		((CircleImgBtnGroup) findViewById(R.id.cib4)).configGroup(this, rlLeft);
 		((CircleImgBtnGroup) findViewById(R.id.cib5_1)).configGroup(this, rlLeft);
 		((CircleImgBtnGroup) findViewById(R.id.cib5_2)).configGroup(this, rlLeft);

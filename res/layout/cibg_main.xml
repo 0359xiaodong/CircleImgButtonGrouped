@@ -318,7 +318,7 @@
             app:imgSrcCIB6="@drawable/ic_turtle" />
 
         <com.edp.circlebuttongrouped.CircleImgBtnGroup
-            android:id="@+id/cibR6"
+            android:id="@+id/cib3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
