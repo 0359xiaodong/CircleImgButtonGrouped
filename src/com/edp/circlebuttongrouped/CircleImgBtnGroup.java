@@ -2,13 +2,10 @@ package com.edp.circlebuttongrouped;
 
 import java.util.ArrayList;
 
-import javax.crypto.spec.IvParameterSpec;
-
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
-import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnLongClickListener;
@@ -26,6 +23,7 @@ public class CircleImgBtnGroup extends CircleImgBtn
 	private boolean collapseAtClick, sendBackAtClick, inverted;
 	private CircleImgBtnUtils cibUtils;
 	private TextView lbGroupLabel;
+	private boolean groupLabelCentralized;
 	private OnCircleButtonClickListener onClickListener;
 	ArrayList<CircleImgBtn> CIBs = new ArrayList<CircleImgBtn>();
 	private ArrayList<RelativeLayout> othersRl = new ArrayList<RelativeLayout>();
@@ -107,6 +105,21 @@ public class CircleImgBtnGroup extends CircleImgBtn
 	public void setGroupLabel(String label){
 		lbGroupLabel.setText(label);
 	}
+
+	public void setGroupLabel(String label, boolean groupLabelCentralized){
+		lbGroupLabel.setText(label);
+		setGroupLabelCentralized(groupLabelCentralized);
+	}
+	
+	public void setGroupLabelCentralized(boolean groupLabelCentralized) {
+		this.groupLabelCentralized = groupLabelCentralized;
+		configLbLabelPosition();
+	}
+	
+	public boolean isGroupLabelCentralized() {
+		return groupLabelCentralized;
+	}
+	
 	/**
 	 * configura a qtd de botoes e os instancia
 	 * @param count
@@ -141,21 +154,28 @@ public class CircleImgBtnGroup extends CircleImgBtn
 		cibUtils.setRl(rl);
 		configCollapseAfterOutsiteClick(rl);
 		onClickListener = cl;
-		RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(
-				LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
-		params.addRule(inverted ? RelativeLayout.ALIGN_RIGHT : RelativeLayout.ALIGN_LEFT, this.getId());
-		params.addRule(RelativeLayout.ALIGN_BOTTOM, this.getId());
-//		final float lbGroupWidth = lbGroupLabel.getPaint().measureText(lbGroupLabel.getText().toString());
-//		int leftMargin = getViewWidth()/2 - (int)lbGroupWidth/3;
-		int leftMargin = (inverted) ? 0 : 5;
-		int rightMargin = (inverted) ? 5 : 0;
-		params.setMargins(leftMargin, rightMargin, rightMargin, -15);
-		lbGroupLabel.setLayoutParams(params);
+		configLbLabelPosition();
 		rl.addView(lbGroupLabel);
 		//coloca iniciando do ultimo para q o primeiro fique no topo e no canto esquerdo
 		drawCIBs(rl);
 		bringToFront();
 		return this;
+	}
+
+	private void configLbLabelPosition() {
+		RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(
+				LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+		params.addRule(inverted ? RelativeLayout.ALIGN_RIGHT : RelativeLayout.ALIGN_LEFT, this.getId());
+		params.addRule(RelativeLayout.ALIGN_BOTTOM, this.getId());
+		int leftMargin = (inverted) ? 0 : 5;
+		int rightMargin = (inverted) ? 5 : 0;
+		if(isGroupLabelCentralized()){
+			float lbGroupWidth = lbGroupLabel.getPaint().measureText(lbGroupLabel.getText().toString());
+			leftMargin = (inverted) ? 0 : getViewWidth()/2 - (int)lbGroupWidth/3;
+			rightMargin = (inverted) ? getViewWidth()/2 - (int)lbGroupWidth/3 : 0;
+		}
+		params.setMargins(leftMargin, rightMargin, rightMargin, -15);
+		lbGroupLabel.setLayoutParams(params);
 	}
 
 	void drawCIBs(RelativeLayout rl) {

@@ -36,7 +36,6 @@ public class MainActivity extends Activity implements OnCircleButtonClickListene
 		((CircleImgBtnGroup) findViewById(R.id.cibBottom4)).configGroup(this, rlLeft);
 		((CircleImgBtnGroup) findViewById(R.id.cibBottom5)).configGroup(this, rlLeft);
 		((CircleImgBtnGroup) findViewById(R.id.cibBottom6)).configGroup(this, rlLeft);
-		((CircleImgBtnGroup) findViewById(R.id.cib3)).configGroup(this, rlLeft);
 		((CircleImgBtnGroup) findViewById(R.id.cib4)).configGroup(this, rlLeft);
 		((CircleImgBtnGroup) findViewById(R.id.cib5_1)).configGroup(this, rlLeft);
 		((CircleImgBtnGroup) findViewById(R.id.cib5_2)).configGroup(this, rlLeft);
@@ -44,11 +43,12 @@ public class MainActivity extends Activity implements OnCircleButtonClickListene
 		((CircleImgBtnGroup) findViewById(R.id.cib6_1)).configGroup(this, rlLeft);
 		((CircleImgBtnGroup) findViewById(R.id.cib6_2)).configGroup(this, rlLeft);
 		((CircleImgBtnGroup) findViewById(R.id.cib6_3)).configGroup(this, rlLeft);
-		((CircleImgBtnGroup) findViewById(R.id.cibR1)).configGroup(this, rlLeft);
-		((CircleImgBtnGroup) findViewById(R.id.cibR2)).configGroup(this, rlLeft);
 		((CircleImgBtnGroup) findViewById(R.id.cibR3)).configGroup(this, rlLeft);
-		((CircleImgBtnGroup) findViewById(R.id.cibR4)).configGroup(this, rlLeft);
-		((CircleImgBtnGroup) findViewById(R.id.cibR5)).configGroup(this, rlLeft);
+		//Config group label
+		((CircleImgBtnGroup) findViewById(R.id.cibTop3)).setGroupLabel("Animais");
+		((CircleImgBtnGroup) findViewById(R.id.cibR3)).setGroupLabel("Animais");
+		((CircleImgBtnGroup) findViewById(R.id.cibR3)).setGroupLabelCentralized(true);
+		((CircleImgBtnGroup) findViewById(R.id.cibTop6)).setGroupLabel("Animais");
 	}
 
 	@Override
