@@ -3,7 +3,7 @@ CircleButtonGrouped
 
 Android componente que permite criar botões circulares e agrupados com animação de expandir e contrair o grupo
 
-Características:
+Características
 
   * Botão circular
   * Agrupamento de botões
@@ -13,8 +13,12 @@ Características:
   * Label para descrição do grupo
   * Opção de inverter sentido do agrupamento/animações
   
-```
+Utilização
 
+     Após adicionar o componente dentro de um RelativeLayout (requer estar layout para funcionar) com seus respectivos parâmetros, chame o método configGroup de cada componente CIBG para configurá-lo.
+
+  * Xml
+```
   <com.edp.circlebuttongrouped.CircleImgBtnGroup
       android:id="@+id/cibTop3"
       android:layout_width="wrap_content"
@@ -30,9 +34,14 @@ Características:
       app:imgSrcCIB4="@drawable/ic_elephant"
       app:imgSrcCIB5="@drawable/ic_fish"
       app:imgSrcCIB6="@drawable/ic_turtle"/>
-
-
 ```
+  * Activity
+```
+     RelativeLayout relativeLayout1 = (RelativeLayout) findViewById(R.id.relativeLayout1);
+     CircleImgBtnGroup cibg1 = (CircleImgBtnGroup) findViewById(R.id.cibg1);
+     cibg1.configGroup(this, relativeLayout1);
+```
+
 ![alt tag](https://raw.githubusercontent.com/edipo2s/CircleButtonGrouped/master/Screenshot_0.png)
 
 ![alt tag](https://raw.githubusercontent.com/edipo2s/CircleButtonGrouped/master/Screenshot_1.png)
