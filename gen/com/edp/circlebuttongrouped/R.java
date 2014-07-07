@@ -173,14 +173,16 @@ containing a value of this type.
     public static final class drawable {
         public static final int card_background=0x7f020000;
         public static final int card_selector=0x7f020001;
-        public static final int ic_bug=0x7f020002;
-        public static final int ic_cat=0x7f020003;
-        public static final int ic_dog=0x7f020004;
-        public static final int ic_elephant=0x7f020005;
-        public static final int ic_fish=0x7f020006;
-        public static final int ic_launcher=0x7f020007;
-        public static final int ic_turtle=0x7f020008;
-        public static final int pressed_background_card=0x7f020009;
+        public static final int empty=0x7f020002;
+        public static final int ic_bug=0x7f020003;
+        public static final int ic_cat=0x7f020004;
+        public static final int ic_dog=0x7f020005;
+        public static final int ic_elephant=0x7f020006;
+        public static final int ic_fish=0x7f020007;
+        public static final int ic_launcher=0x7f020008;
+        public static final int ic_turtle=0x7f020009;
+        public static final int icon=0x7f02000a;
+        public static final int pressed_background_card=0x7f02000b;
     }
     public static final class id {
         public static final int action_settings=0x7f090012;

@@ -65,7 +65,7 @@ public class CircleImgBtnGroup extends CircleImgBtn
 	 * @return - id do drawable associado a ele
 	 */
 	public int getImgCIVs(int i) {
-		final int def = R.drawable.ic_launcher;
+		final int def = R.drawable.empty;
 		switch (i) {
 			case 0: return attribs.getResourceId(R.styleable.CircleImgBtnGroup_imgSrcCIB1, def);
 			case 1: return attribs.getResourceId(R.styleable.CircleImgBtnGroup_imgSrcCIB2, def);
